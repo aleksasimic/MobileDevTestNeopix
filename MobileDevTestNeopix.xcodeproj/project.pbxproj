@@ -3,18 +3,71 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EB89C96B3A91D957E2D859E /* Pods_MobileDevTestNeopixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C558E43C31D7EE90201E1F9 /* Pods_MobileDevTestNeopixTests.framework */; };
+		770F5E1DB52167C292CEBB1A /* Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7BF7F83B42687CF2AA0D70 /* Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework */; };
 		B452E5EC2441BC8200B0DD6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E5EB2441BC8200B0DD6F /* AppDelegate.swift */; };
 		B452E5EE2441BC8200B0DD6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E5ED2441BC8200B0DD6F /* SceneDelegate.swift */; };
-		B452E5F02441BC8200B0DD6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E5EF2441BC8200B0DD6F /* ViewController.swift */; };
-		B452E5F32441BC8200B0DD6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B452E5F12441BC8200B0DD6F /* Main.storyboard */; };
+		B452E5F32441BC8200B0DD6F /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B452E5F12441BC8200B0DD6F /* Orders.storyboard */; };
 		B452E5F52441BC8400B0DD6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B452E5F42441BC8400B0DD6F /* Assets.xcassets */; };
 		B452E5F82441BC8400B0DD6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B452E5F62441BC8400B0DD6F /* LaunchScreen.storyboard */; };
 		B452E6032441BC8400B0DD6F /* MobileDevTestNeopixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E6022441BC8400B0DD6F /* MobileDevTestNeopixTests.swift */; };
 		B452E60E2441BC8400B0DD6F /* MobileDevTestNeopixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E60D2441BC8400B0DD6F /* MobileDevTestNeopixUITests.swift */; };
+		B452E6232441FDC100B0DD6F /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E6222441FDC100B0DD6F /* HttpMethod.swift */; };
+		B452E6272441FE2700B0DD6F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E6262441FE2700B0DD6F /* Coordinator.swift */; };
+		B452E6292441FE4500B0DD6F /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E6282441FE4500B0DD6F /* Storyboarded.swift */; };
+		B452E62B2441FEBD00B0DD6F /* OrdersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E62A2441FEBD00B0DD6F /* OrdersCoordinator.swift */; };
+		B452E62D2441FEEA00B0DD6F /* Orderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E62C2441FEEA00B0DD6F /* Orderable.swift */; };
+		B452E62F244200DF00B0DD6F /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E62E244200DF00B0DD6F /* OrdersViewController.swift */; };
+		B452E65D244205AD00B0DD6F /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E635244205AC00B0DD6F /* Roboto-Bold.ttf */; };
+		B452E65E244205AD00B0DD6F /* Metropolis-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E636244205AC00B0DD6F /* Metropolis-SemiBoldItalic.otf */; };
+		B452E65F244205AD00B0DD6F /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E637244205AC00B0DD6F /* Rubik-MediumItalic.ttf */; };
+		B452E660244205AD00B0DD6F /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E638244205AC00B0DD6F /* Roboto-Light.ttf */; };
+		B452E661244205AD00B0DD6F /* Metropolis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E639244205AC00B0DD6F /* Metropolis-SemiBold.otf */; };
+		B452E662244205AD00B0DD6F /* Metropolis-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E63A244205AC00B0DD6F /* Metropolis-Medium.otf */; };
+		B452E663244205AD00B0DD6F /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E63B244205AC00B0DD6F /* Rubik-Light.ttf */; };
+		B452E664244205AD00B0DD6F /* Metropolis-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E63C244205AC00B0DD6F /* Metropolis-Bold.otf */; };
+		B452E665244205AD00B0DD6F /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E63D244205AC00B0DD6F /* Roboto-MediumItalic.ttf */; };
+		B452E666244205AD00B0DD6F /* Metropolis-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E63E244205AC00B0DD6F /* Metropolis-MediumItalic.otf */; };
+		B452E667244205AD00B0DD6F /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E63F244205AC00B0DD6F /* Roboto-BoldItalic.ttf */; };
+		B452E668244205AD00B0DD6F /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E640244205AC00B0DD6F /* Rubik-BlackItalic.ttf */; };
+		B452E669244205AD00B0DD6F /* Metropolis-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E641244205AC00B0DD6F /* Metropolis-ExtraLightItalic.otf */; };
+		B452E66A244205AD00B0DD6F /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E642244205AC00B0DD6F /* Rubik-LightItalic.ttf */; };
+		B452E66B244205AD00B0DD6F /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E643244205AC00B0DD6F /* Roboto-BlackItalic.ttf */; };
+		B452E66C244205AD00B0DD6F /* Metropolis-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E644244205AC00B0DD6F /* Metropolis-Thin.otf */; };
+		B452E66D244205AD00B0DD6F /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E645244205AC00B0DD6F /* Roboto-Black.ttf */; };
+		B452E66E244205AD00B0DD6F /* Metropolis-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E646244205AC00B0DD6F /* Metropolis-ExtraLight.otf */; };
+		B452E66F244205AD00B0DD6F /* Metropolis-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E647244205AC00B0DD6F /* Metropolis-Light.otf */; };
+		B452E670244205AD00B0DD6F /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E648244205AC00B0DD6F /* Rubik-Medium.ttf */; };
+		B452E671244205AD00B0DD6F /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E649244205AD00B0DD6F /* Rubik-Bold.ttf */; };
+		B452E672244205AD00B0DD6F /* Metropolis-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E64A244205AD00B0DD6F /* Metropolis-BoldItalic.otf */; };
+		B452E673244205AD00B0DD6F /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E64B244205AD00B0DD6F /* Roboto-Thin.ttf */; };
+		B452E674244205AD00B0DD6F /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E64C244205AD00B0DD6F /* Rubik-Italic.ttf */; };
+		B452E675244205AD00B0DD6F /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E64D244205AD00B0DD6F /* Rubik-Regular.ttf */; };
+		B452E676244205AD00B0DD6F /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E64E244205AD00B0DD6F /* Roboto-Italic.ttf */; };
+		B452E677244205AD00B0DD6F /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E64F244205AD00B0DD6F /* Roboto-Regular.ttf */; };
+		B452E678244205AD00B0DD6F /* Metropolis-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E650244205AD00B0DD6F /* Metropolis-ThinItalic.otf */; };
+		B452E679244205AD00B0DD6F /* Metropolis-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E651244205AD00B0DD6F /* Metropolis-ExtraBoldItalic.otf */; };
+		B452E67A244205AD00B0DD6F /* Metropolis-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E652244205AD00B0DD6F /* Metropolis-LightItalic.otf */; };
+		B452E67B244205AD00B0DD6F /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E653244205AD00B0DD6F /* Roboto-ThinItalic.ttf */; };
+		B452E67C244205AD00B0DD6F /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E654244205AD00B0DD6F /* Rubik-Black.ttf */; };
+		B452E67D244205AD00B0DD6F /* Metropolis-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E655244205AD00B0DD6F /* Metropolis-BlackItalic.otf */; };
+		B452E67E244205AD00B0DD6F /* Metropolis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E656244205AD00B0DD6F /* Metropolis-Regular.otf */; };
+		B452E67F244205AD00B0DD6F /* Metropolis-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E657244205AD00B0DD6F /* Metropolis-ExtraBold.otf */; };
+		B452E680244205AD00B0DD6F /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E658244205AD00B0DD6F /* Roboto-LightItalic.ttf */; };
+		B452E681244205AD00B0DD6F /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E659244205AD00B0DD6F /* Roboto-Medium.ttf */; };
+		B452E682244205AD00B0DD6F /* Metropolis-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E65A244205AD00B0DD6F /* Metropolis-Black.otf */; };
+		B452E683244205AD00B0DD6F /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E65B244205AD00B0DD6F /* Rubik-BoldItalic.ttf */; };
+		B452E684244205AD00B0DD6F /* Metropolis-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E65C244205AD00B0DD6F /* Metropolis-RegularItalic.otf */; };
+		B452E687244208B700B0DD6F /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E686244208B700B0DD6F /* Json.swift */; };
+		B452E689244209A400B0DD6F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E688244209A400B0DD6F /* Response.swift */; };
+		B452E68B24420B6E00B0DD6F /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E68A24420B6E00B0DD6F /* HttpClient.swift */; };
+		B452E68D24420F3800B0DD6F /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E68C24420F3800B0DD6F /* ContentType.swift */; };
+		B452E6902442147300B0DD6F /* URL+QueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E68F2442147300B0DD6F /* URL+QueryParameters.swift */; };
+		C681E6321D1426E453DC9CB8 /* Pods_MobileDevTestNeopix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D047797360D5EFC2B8E1C30 /* Pods_MobileDevTestNeopix.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +88,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		028ECA818EB59DE230356067 /* Pods-MobileDevTestNeopix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopix.release.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopix/Pods-MobileDevTestNeopix.release.xcconfig"; sourceTree = "<group>"; };
+		1010A0C59C11CC829E3AD03D /* Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.release.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1C558E43C31D7EE90201E1F9 /* Pods_MobileDevTestNeopixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileDevTestNeopixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20C24241DFC164064D675EE7 /* Pods-MobileDevTestNeopix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopix.debug.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopix/Pods-MobileDevTestNeopix.debug.xcconfig"; sourceTree = "<group>"; };
+		21FBE0A540E5CD515B82F66D /* Pods-MobileDevTestNeopixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopixTests.debug.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopixTests/Pods-MobileDevTestNeopixTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3D047797360D5EFC2B8E1C30 /* Pods_MobileDevTestNeopix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileDevTestNeopix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E7BF7F83B42687CF2AA0D70 /* Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B452E5E82441BC8200B0DD6F /* MobileDevTestNeopix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileDevTestNeopix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B452E5EB2441BC8200B0DD6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B452E5ED2441BC8200B0DD6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B452E5EF2441BC8200B0DD6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B452E5F22441BC8200B0DD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B452E5F22441BC8200B0DD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Orders.storyboard; sourceTree = "<group>"; };
 		B452E5F42441BC8400B0DD6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B452E5F72441BC8400B0DD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B452E5F92441BC8400B0DD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +108,59 @@
 		B452E6092441BC8400B0DD6F /* MobileDevTestNeopixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileDevTestNeopixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B452E60D2441BC8400B0DD6F /* MobileDevTestNeopixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDevTestNeopixUITests.swift; sourceTree = "<group>"; };
 		B452E60F2441BC8400B0DD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B452E6222441FDC100B0DD6F /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		B452E6262441FE2700B0DD6F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B452E6282441FE4500B0DD6F /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		B452E62A2441FEBD00B0DD6F /* OrdersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCoordinator.swift; sourceTree = "<group>"; };
+		B452E62C2441FEEA00B0DD6F /* Orderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orderable.swift; sourceTree = "<group>"; };
+		B452E62E244200DF00B0DD6F /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		B452E635244205AC00B0DD6F /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		B452E636244205AC00B0DD6F /* Metropolis-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-SemiBoldItalic.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		B452E637244205AC00B0DD6F /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-MediumItalic.ttf"; path = "../../../../Neopix Assets/Fonts/Rubik/Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B452E638244205AC00B0DD6F /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-Light.ttf"; sourceTree = "<group>"; };
+		B452E639244205AC00B0DD6F /* Metropolis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-SemiBold.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-SemiBold.otf"; sourceTree = "<group>"; };
+		B452E63A244205AC00B0DD6F /* Metropolis-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-Medium.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-Medium.otf"; sourceTree = "<group>"; };
+		B452E63B244205AC00B0DD6F /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Light.ttf"; path = "../../../../Neopix Assets/Fonts/Rubik/Rubik-Light.ttf"; sourceTree = "<group>"; };
+		B452E63C244205AC00B0DD6F /* Metropolis-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-Bold.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-Bold.otf"; sourceTree = "<group>"; };
+		B452E63D244205AC00B0DD6F /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-MediumItalic.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B452E63E244205AC00B0DD6F /* Metropolis-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-MediumItalic.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-MediumItalic.otf"; sourceTree = "<group>"; };
+		B452E63F244205AC00B0DD6F /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BoldItalic.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B452E640244205AC00B0DD6F /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-BlackItalic.ttf"; path = "../../../../Neopix Assets/Fonts/Rubik/Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		B452E641244205AC00B0DD6F /* Metropolis-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-ExtraLightItalic.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-ExtraLightItalic.otf"; sourceTree = "<group>"; };
+		B452E642244205AC00B0DD6F /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-LightItalic.ttf"; path = "../../../../Neopix Assets/Fonts/Rubik/Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		B452E643244205AC00B0DD6F /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BlackItalic.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		B452E644244205AC00B0DD6F /* Metropolis-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-Thin.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-Thin.otf"; sourceTree = "<group>"; };
+		B452E645244205AC00B0DD6F /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Black.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-Black.ttf"; sourceTree = "<group>"; };
+		B452E646244205AC00B0DD6F /* Metropolis-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-ExtraLight.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-ExtraLight.otf"; sourceTree = "<group>"; };
+		B452E647244205AC00B0DD6F /* Metropolis-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-Light.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-Light.otf"; sourceTree = "<group>"; };
+		B452E648244205AC00B0DD6F /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Medium.ttf"; path = "../../../../Neopix Assets/Fonts/Rubik/Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		B452E649244205AD00B0DD6F /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Bold.ttf"; path = "../../../../Neopix Assets/Fonts/Rubik/Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		B452E64A244205AD00B0DD6F /* Metropolis-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-BoldItalic.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-BoldItalic.otf"; sourceTree = "<group>"; };
+		B452E64B244205AD00B0DD6F /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		B452E64C244205AD00B0DD6F /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Italic.ttf"; path = "../../../../Neopix Assets/Fonts/Rubik/Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		B452E64D244205AD00B0DD6F /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Regular.ttf"; path = "../../../../Neopix Assets/Fonts/Rubik/Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		B452E64E244205AD00B0DD6F /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Italic.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		B452E64F244205AD00B0DD6F /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		B452E650244205AD00B0DD6F /* Metropolis-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-ThinItalic.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-ThinItalic.otf"; sourceTree = "<group>"; };
+		B452E651244205AD00B0DD6F /* Metropolis-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-ExtraBoldItalic.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		B452E652244205AD00B0DD6F /* Metropolis-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-LightItalic.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-LightItalic.otf"; sourceTree = "<group>"; };
+		B452E653244205AD00B0DD6F /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-ThinItalic.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		B452E654244205AD00B0DD6F /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Black.ttf"; path = "../../../../Neopix Assets/Fonts/Rubik/Rubik-Black.ttf"; sourceTree = "<group>"; };
+		B452E655244205AD00B0DD6F /* Metropolis-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-BlackItalic.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-BlackItalic.otf"; sourceTree = "<group>"; };
+		B452E656244205AD00B0DD6F /* Metropolis-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-Regular.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-Regular.otf"; sourceTree = "<group>"; };
+		B452E657244205AD00B0DD6F /* Metropolis-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-ExtraBold.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-ExtraBold.otf"; sourceTree = "<group>"; };
+		B452E658244205AD00B0DD6F /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-LightItalic.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		B452E659244205AD00B0DD6F /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		B452E65A244205AD00B0DD6F /* Metropolis-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-Black.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-Black.otf"; sourceTree = "<group>"; };
+		B452E65B244205AD00B0DD6F /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-BoldItalic.ttf"; path = "../../../../Neopix Assets/Fonts/Rubik/Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B452E65C244205AD00B0DD6F /* Metropolis-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-RegularItalic.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-RegularItalic.otf"; sourceTree = "<group>"; };
+		B452E686244208B700B0DD6F /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		B452E688244209A400B0DD6F /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		B452E68A24420B6E00B0DD6F /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		B452E68C24420F3800B0DD6F /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		B452E68F2442147300B0DD6F /* URL+QueryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryParameters.swift"; sourceTree = "<group>"; };
+		CEC7CBEDAF38016FFFB94332 /* Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E9327BE78C945919E6CD0051 /* Pods-MobileDevTestNeopixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopixTests.release.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopixTests/Pods-MobileDevTestNeopixTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C681E6321D1426E453DC9CB8 /* Pods_MobileDevTestNeopix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EB89C96B3A91D957E2D859E /* Pods_MobileDevTestNeopixTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +184,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				770F5E1DB52167C292CEBB1A /* Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43816A14FA1809A9A9ABFB9A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20C24241DFC164064D675EE7 /* Pods-MobileDevTestNeopix.debug.xcconfig */,
+				028ECA818EB59DE230356067 /* Pods-MobileDevTestNeopix.release.xcconfig */,
+				CEC7CBEDAF38016FFFB94332 /* Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig */,
+				1010A0C59C11CC829E3AD03D /* Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.release.xcconfig */,
+				21FBE0A540E5CD515B82F66D /* Pods-MobileDevTestNeopixTests.debug.xcconfig */,
+				E9327BE78C945919E6CD0051 /* Pods-MobileDevTestNeopixTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B452E5DF2441BC8200B0DD6F = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +211,8 @@
 				B452E6012441BC8400B0DD6F /* MobileDevTestNeopixTests */,
 				B452E60C2441BC8400B0DD6F /* MobileDevTestNeopixUITests */,
 				B452E5E92441BC8200B0DD6F /* Products */,
+				43816A14FA1809A9A9ABFB9A /* Pods */,
+				C726594126BEA4AC37B4C4FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +229,11 @@
 		B452E5EA2441BC8200B0DD6F /* MobileDevTestNeopix */ = {
 			isa = PBXGroup;
 			children = (
-				B452E5EB2441BC8200B0DD6F /* AppDelegate.swift */,
-				B452E5ED2441BC8200B0DD6F /* SceneDelegate.swift */,
-				B452E5EF2441BC8200B0DD6F /* ViewController.swift */,
-				B452E5F12441BC8200B0DD6F /* Main.storyboard */,
-				B452E5F42441BC8400B0DD6F /* Assets.xcassets */,
-				B452E5F62441BC8400B0DD6F /* LaunchScreen.storyboard */,
-				B452E5F92441BC8400B0DD6F /* Info.plist */,
+				B452E6242441FE0D00B0DD6F /* Common */,
+				B452E61D2441FB5D00B0DD6F /* Modules */,
+				B452E6212441FDAD00B0DD6F /* HttpClient */,
+				B452E61B2441FB0F00B0DD6F /* Support */,
+				B452E61C2441FB3C00B0DD6F /* Resources */,
 			);
 			path = MobileDevTestNeopix;
 			sourceTree = "<group>";
@@ -128,6 +256,180 @@
 			path = MobileDevTestNeopixUITests;
 			sourceTree = "<group>";
 		};
+		B452E61B2441FB0F00B0DD6F /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				B452E5F92441BC8400B0DD6F /* Info.plist */,
+				B452E5EB2441BC8200B0DD6F /* AppDelegate.swift */,
+				B452E5ED2441BC8200B0DD6F /* SceneDelegate.swift */,
+				B452E5F62441BC8400B0DD6F /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		B452E61C2441FB3C00B0DD6F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B452E6342442056400B0DD6F /* Fonts */,
+				B452E5F42441BC8400B0DD6F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B452E61D2441FB5D00B0DD6F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B452E61E2441FBA700B0DD6F /* Orders Module */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B452E61E2441FBA700B0DD6F /* Orders Module */ = {
+			isa = PBXGroup;
+			children = (
+				B452E6202441FBB800B0DD6F /* Models */,
+				B452E630244202CC00B0DD6F /* ViewModels */,
+				B452E631244202D700B0DD6F /* DataSources */,
+				B452E61F2441FBB000B0DD6F /* ViewControllers */,
+				B452E62A2441FEBD00B0DD6F /* OrdersCoordinator.swift */,
+				B452E62C2441FEEA00B0DD6F /* Orderable.swift */,
+				B452E5F12441BC8200B0DD6F /* Orders.storyboard */,
+			);
+			path = "Orders Module";
+			sourceTree = "<group>";
+		};
+		B452E61F2441FBB000B0DD6F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B452E62E244200DF00B0DD6F /* OrdersViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B452E6202441FBB800B0DD6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B452E6212441FDAD00B0DD6F /* HttpClient */ = {
+			isa = PBXGroup;
+			children = (
+				B452E685244208AA00B0DD6F /* Models */,
+				B452E68A24420B6E00B0DD6F /* HttpClient.swift */,
+			);
+			path = HttpClient;
+			sourceTree = "<group>";
+		};
+		B452E6242441FE0D00B0DD6F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B452E68E2442145300B0DD6F /* Extensions */,
+				B452E6252441FE1900B0DD6F /* Coordinator */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B452E6252441FE1900B0DD6F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				B452E6262441FE2700B0DD6F /* Coordinator.swift */,
+				B452E6282441FE4500B0DD6F /* Storyboarded.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		B452E630244202CC00B0DD6F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B452E631244202D700B0DD6F /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		B452E6342442056400B0DD6F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B452E65A244205AD00B0DD6F /* Metropolis-Black.otf */,
+				B452E655244205AD00B0DD6F /* Metropolis-BlackItalic.otf */,
+				B452E63C244205AC00B0DD6F /* Metropolis-Bold.otf */,
+				B452E64A244205AD00B0DD6F /* Metropolis-BoldItalic.otf */,
+				B452E657244205AD00B0DD6F /* Metropolis-ExtraBold.otf */,
+				B452E651244205AD00B0DD6F /* Metropolis-ExtraBoldItalic.otf */,
+				B452E646244205AC00B0DD6F /* Metropolis-ExtraLight.otf */,
+				B452E641244205AC00B0DD6F /* Metropolis-ExtraLightItalic.otf */,
+				B452E647244205AC00B0DD6F /* Metropolis-Light.otf */,
+				B452E652244205AD00B0DD6F /* Metropolis-LightItalic.otf */,
+				B452E63A244205AC00B0DD6F /* Metropolis-Medium.otf */,
+				B452E63E244205AC00B0DD6F /* Metropolis-MediumItalic.otf */,
+				B452E656244205AD00B0DD6F /* Metropolis-Regular.otf */,
+				B452E65C244205AD00B0DD6F /* Metropolis-RegularItalic.otf */,
+				B452E639244205AC00B0DD6F /* Metropolis-SemiBold.otf */,
+				B452E636244205AC00B0DD6F /* Metropolis-SemiBoldItalic.otf */,
+				B452E644244205AC00B0DD6F /* Metropolis-Thin.otf */,
+				B452E650244205AD00B0DD6F /* Metropolis-ThinItalic.otf */,
+				B452E645244205AC00B0DD6F /* Roboto-Black.ttf */,
+				B452E643244205AC00B0DD6F /* Roboto-BlackItalic.ttf */,
+				B452E635244205AC00B0DD6F /* Roboto-Bold.ttf */,
+				B452E63F244205AC00B0DD6F /* Roboto-BoldItalic.ttf */,
+				B452E64E244205AD00B0DD6F /* Roboto-Italic.ttf */,
+				B452E638244205AC00B0DD6F /* Roboto-Light.ttf */,
+				B452E658244205AD00B0DD6F /* Roboto-LightItalic.ttf */,
+				B452E659244205AD00B0DD6F /* Roboto-Medium.ttf */,
+				B452E63D244205AC00B0DD6F /* Roboto-MediumItalic.ttf */,
+				B452E64F244205AD00B0DD6F /* Roboto-Regular.ttf */,
+				B452E64B244205AD00B0DD6F /* Roboto-Thin.ttf */,
+				B452E653244205AD00B0DD6F /* Roboto-ThinItalic.ttf */,
+				B452E654244205AD00B0DD6F /* Rubik-Black.ttf */,
+				B452E640244205AC00B0DD6F /* Rubik-BlackItalic.ttf */,
+				B452E649244205AD00B0DD6F /* Rubik-Bold.ttf */,
+				B452E65B244205AD00B0DD6F /* Rubik-BoldItalic.ttf */,
+				B452E64C244205AD00B0DD6F /* Rubik-Italic.ttf */,
+				B452E63B244205AC00B0DD6F /* Rubik-Light.ttf */,
+				B452E642244205AC00B0DD6F /* Rubik-LightItalic.ttf */,
+				B452E648244205AC00B0DD6F /* Rubik-Medium.ttf */,
+				B452E637244205AC00B0DD6F /* Rubik-MediumItalic.ttf */,
+				B452E64D244205AD00B0DD6F /* Rubik-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B452E685244208AA00B0DD6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B452E6222441FDC100B0DD6F /* HttpMethod.swift */,
+				B452E68C24420F3800B0DD6F /* ContentType.swift */,
+				B452E686244208B700B0DD6F /* Json.swift */,
+				B452E688244209A400B0DD6F /* Response.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B452E68E2442145300B0DD6F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B452E68F2442147300B0DD6F /* URL+QueryParameters.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C726594126BEA4AC37B4C4FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D047797360D5EFC2B8E1C30 /* Pods_MobileDevTestNeopix.framework */,
+				7E7BF7F83B42687CF2AA0D70 /* Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework */,
+				1C558E43C31D7EE90201E1F9 /* Pods_MobileDevTestNeopixTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +437,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B452E6122441BC8400B0DD6F /* Build configuration list for PBXNativeTarget "MobileDevTestNeopix" */;
 			buildPhases = (
+				AB9C1E3F69ABC53AB6D1D216 /* [CP] Check Pods Manifest.lock */,
 				B452E5E42441BC8200B0DD6F /* Sources */,
 				B452E5E52441BC8200B0DD6F /* Frameworks */,
 				B452E5E62441BC8200B0DD6F /* Resources */,
+				FE668B4B226ADA9B428AC803 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +456,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B452E6152441BC8400B0DD6F /* Build configuration list for PBXNativeTarget "MobileDevTestNeopixTests" */;
 			buildPhases = (
+				002D9FE091FC951CBFB4415C /* [CP] Check Pods Manifest.lock */,
 				B452E5FA2441BC8400B0DD6F /* Sources */,
 				B452E5FB2441BC8400B0DD6F /* Frameworks */,
 				B452E5FC2441BC8400B0DD6F /* Resources */,
@@ -170,9 +475,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B452E6182441BC8400B0DD6F /* Build configuration list for PBXNativeTarget "MobileDevTestNeopixUITests" */;
 			buildPhases = (
+				159CD2A224F32B3E1E860A42 /* [CP] Check Pods Manifest.lock */,
 				B452E6052441BC8400B0DD6F /* Sources */,
 				B452E6062441BC8400B0DD6F /* Frameworks */,
 				B452E6072441BC8400B0DD6F /* Resources */,
+				AD7B04D97C24EA4BFAA90266 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,9 +539,49 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B452E681244205AD00B0DD6F /* Roboto-Medium.ttf in Resources */,
+				B452E661244205AD00B0DD6F /* Metropolis-SemiBold.otf in Resources */,
+				B452E675244205AD00B0DD6F /* Rubik-Regular.ttf in Resources */,
+				B452E662244205AD00B0DD6F /* Metropolis-Medium.otf in Resources */,
+				B452E67C244205AD00B0DD6F /* Rubik-Black.ttf in Resources */,
 				B452E5F82441BC8400B0DD6F /* LaunchScreen.storyboard in Resources */,
+				B452E669244205AD00B0DD6F /* Metropolis-ExtraLightItalic.otf in Resources */,
+				B452E65F244205AD00B0DD6F /* Rubik-MediumItalic.ttf in Resources */,
+				B452E665244205AD00B0DD6F /* Roboto-MediumItalic.ttf in Resources */,
+				B452E668244205AD00B0DD6F /* Rubik-BlackItalic.ttf in Resources */,
+				B452E67F244205AD00B0DD6F /* Metropolis-ExtraBold.otf in Resources */,
+				B452E66D244205AD00B0DD6F /* Roboto-Black.ttf in Resources */,
 				B452E5F52441BC8400B0DD6F /* Assets.xcassets in Resources */,
-				B452E5F32441BC8200B0DD6F /* Main.storyboard in Resources */,
+				B452E67B244205AD00B0DD6F /* Roboto-ThinItalic.ttf in Resources */,
+				B452E67A244205AD00B0DD6F /* Metropolis-LightItalic.otf in Resources */,
+				B452E676244205AD00B0DD6F /* Roboto-Italic.ttf in Resources */,
+				B452E682244205AD00B0DD6F /* Metropolis-Black.otf in Resources */,
+				B452E679244205AD00B0DD6F /* Metropolis-ExtraBoldItalic.otf in Resources */,
+				B452E66E244205AD00B0DD6F /* Metropolis-ExtraLight.otf in Resources */,
+				B452E683244205AD00B0DD6F /* Rubik-BoldItalic.ttf in Resources */,
+				B452E680244205AD00B0DD6F /* Roboto-LightItalic.ttf in Resources */,
+				B452E677244205AD00B0DD6F /* Roboto-Regular.ttf in Resources */,
+				B452E670244205AD00B0DD6F /* Rubik-Medium.ttf in Resources */,
+				B452E66F244205AD00B0DD6F /* Metropolis-Light.otf in Resources */,
+				B452E67D244205AD00B0DD6F /* Metropolis-BlackItalic.otf in Resources */,
+				B452E65E244205AD00B0DD6F /* Metropolis-SemiBoldItalic.otf in Resources */,
+				B452E67E244205AD00B0DD6F /* Metropolis-Regular.otf in Resources */,
+				B452E684244205AD00B0DD6F /* Metropolis-RegularItalic.otf in Resources */,
+				B452E671244205AD00B0DD6F /* Rubik-Bold.ttf in Resources */,
+				B452E660244205AD00B0DD6F /* Roboto-Light.ttf in Resources */,
+				B452E672244205AD00B0DD6F /* Metropolis-BoldItalic.otf in Resources */,
+				B452E663244205AD00B0DD6F /* Rubik-Light.ttf in Resources */,
+				B452E666244205AD00B0DD6F /* Metropolis-MediumItalic.otf in Resources */,
+				B452E65D244205AD00B0DD6F /* Roboto-Bold.ttf in Resources */,
+				B452E66B244205AD00B0DD6F /* Roboto-BlackItalic.ttf in Resources */,
+				B452E664244205AD00B0DD6F /* Metropolis-Bold.otf in Resources */,
+				B452E667244205AD00B0DD6F /* Roboto-BoldItalic.ttf in Resources */,
+				B452E5F32441BC8200B0DD6F /* Orders.storyboard in Resources */,
+				B452E674244205AD00B0DD6F /* Rubik-Italic.ttf in Resources */,
+				B452E66C244205AD00B0DD6F /* Metropolis-Thin.otf in Resources */,
+				B452E678244205AD00B0DD6F /* Metropolis-ThinItalic.otf in Resources */,
+				B452E673244205AD00B0DD6F /* Roboto-Thin.ttf in Resources */,
+				B452E66A244205AD00B0DD6F /* Rubik-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +601,127 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		002D9FE091FC951CBFB4415C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MobileDevTestNeopixTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		159CD2A224F32B3E1E860A42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB9C1E3F69ABC53AB6D1D216 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MobileDevTestNeopix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD7B04D97C24EA4BFAA90266 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE668B4B226ADA9B428AC803 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileDevTestNeopix/Pods-MobileDevTestNeopix-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileDevTestNeopix/Pods-MobileDevTestNeopix-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileDevTestNeopix/Pods-MobileDevTestNeopix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B452E5E42441BC8200B0DD6F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B452E5F02441BC8200B0DD6F /* ViewController.swift in Sources */,
+				B452E687244208B700B0DD6F /* Json.swift in Sources */,
+				B452E6232441FDC100B0DD6F /* HttpMethod.swift in Sources */,
+				B452E62D2441FEEA00B0DD6F /* Orderable.swift in Sources */,
+				B452E6272441FE2700B0DD6F /* Coordinator.swift in Sources */,
+				B452E689244209A400B0DD6F /* Response.swift in Sources */,
+				B452E68D24420F3800B0DD6F /* ContentType.swift in Sources */,
+				B452E62F244200DF00B0DD6F /* OrdersViewController.swift in Sources */,
 				B452E5EC2441BC8200B0DD6F /* AppDelegate.swift in Sources */,
+				B452E68B24420B6E00B0DD6F /* HttpClient.swift in Sources */,
+				B452E62B2441FEBD00B0DD6F /* OrdersCoordinator.swift in Sources */,
+				B452E6902442147300B0DD6F /* URL+QueryParameters.swift in Sources */,
 				B452E5EE2441BC8200B0DD6F /* SceneDelegate.swift in Sources */,
+				B452E6292441FE4500B0DD6F /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,12 +757,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B452E5F12441BC8200B0DD6F /* Main.storyboard */ = {
+		B452E5F12441BC8200B0DD6F /* Orders.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B452E5F22441BC8200B0DD6F /* Base */,
 			);
-			name = Main.storyboard;
+			name = Orders.storyboard;
 			sourceTree = "<group>";
 		};
 		B452E5F62441BC8400B0DD6F /* LaunchScreen.storyboard */ = {
@@ -432,10 +892,11 @@
 		};
 		B452E6132441BC8400B0DD6F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20C24241DFC164064D675EE7 /* Pods-MobileDevTestNeopix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MobileDevTestNeopix/Info.plist;
+				INFOPLIST_FILE = MobileDevTestNeopix/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,10 +910,11 @@
 		};
 		B452E6142441BC8400B0DD6F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 028ECA818EB59DE230356067 /* Pods-MobileDevTestNeopix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MobileDevTestNeopix/Info.plist;
+				INFOPLIST_FILE = MobileDevTestNeopix/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +928,7 @@
 		};
 		B452E6162441BC8400B0DD6F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21FBE0A540E5CD515B82F66D /* Pods-MobileDevTestNeopixTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +950,7 @@
 		};
 		B452E6172441BC8400B0DD6F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9327BE78C945919E6CD0051 /* Pods-MobileDevTestNeopixTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +972,7 @@
 		};
 		B452E6192441BC8400B0DD6F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEC7CBEDAF38016FFFB94332 /* Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +992,7 @@
 		};
 		B452E61A2441BC8400B0DD6F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1010A0C59C11CC829E3AD03D /* Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

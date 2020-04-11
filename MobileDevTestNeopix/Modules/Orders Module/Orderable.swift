@@ -1,0 +1,3 @@
+protocol Orderable {
+    func showOrderDetails()
+}
