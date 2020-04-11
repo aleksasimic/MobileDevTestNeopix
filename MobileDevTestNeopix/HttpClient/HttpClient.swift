@@ -11,8 +11,10 @@ public struct HttpClient {
     }
     
     public func sendRequest(method: HttpMethod, url: URL, body:[String: AnyObject]?, headers: [String: String]?) -> Observable<Response> {
+        
         let request = NSMutableURLRequest(url: url)
         request.httpMethod = method.rawValue
+        
         headers?.forEach {
             request.addValue($1, forHTTPHeaderField: $0)
         }

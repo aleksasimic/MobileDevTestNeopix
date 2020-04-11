@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		3EB89C96B3A91D957E2D859E /* Pods_MobileDevTestNeopixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C558E43C31D7EE90201E1F9 /* Pods_MobileDevTestNeopixTests.framework */; };
 		770F5E1DB52167C292CEBB1A /* Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7BF7F83B42687CF2AA0D70 /* Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework */; };
+		B45188BF244244860050102E /* Distributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188BE244244860050102E /* Distributor.swift */; };
+		B45188C1244247490050102E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188C0244247490050102E /* Order.swift */; };
+		B45188C3244247AF0050102E /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188C2244247AF0050102E /* OrderStatus.swift */; };
+		B45188C5244249950050102E /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188C4244249950050102E /* Venue.swift */; };
+		B45188C724424B0D0050102E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188C624424B0D0050102E /* Note.swift */; };
+		B45188C924424D070050102E /* Date+Milliseconds.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188C824424D070050102E /* Date+Milliseconds.swift */; };
+		B45188CB24424F9C0050102E /* DateFormatter+Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188CA24424F9C0050102E /* DateFormatter+Utilites.swift */; };
+		B45188CD244251510050102E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188CC244251510050102E /* Product.swift */; };
+		B45188CF24425E270050102E /* PaginationMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188CE24425E270050102E /* PaginationMeta.swift */; };
 		B452E5EC2441BC8200B0DD6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E5EB2441BC8200B0DD6F /* AppDelegate.swift */; };
 		B452E5EE2441BC8200B0DD6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E5ED2441BC8200B0DD6F /* SceneDelegate.swift */; };
 		B452E5F32441BC8200B0DD6F /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B452E5F12441BC8200B0DD6F /* Orders.storyboard */; };
@@ -95,6 +104,15 @@
 		21FBE0A540E5CD515B82F66D /* Pods-MobileDevTestNeopixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopixTests.debug.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopixTests/Pods-MobileDevTestNeopixTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D047797360D5EFC2B8E1C30 /* Pods_MobileDevTestNeopix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileDevTestNeopix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7BF7F83B42687CF2AA0D70 /* Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B45188BE244244860050102E /* Distributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distributor.swift; sourceTree = "<group>"; };
+		B45188C0244247490050102E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		B45188C2244247AF0050102E /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
+		B45188C4244249950050102E /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		B45188C624424B0D0050102E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		B45188C824424D070050102E /* Date+Milliseconds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Milliseconds.swift"; sourceTree = "<group>"; };
+		B45188CA24424F9C0050102E /* DateFormatter+Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Utilites.swift"; sourceTree = "<group>"; };
+		B45188CC244251510050102E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		B45188CE24425E270050102E /* PaginationMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationMeta.swift; sourceTree = "<group>"; };
 		B452E5E82441BC8200B0DD6F /* MobileDevTestNeopix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileDevTestNeopix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B452E5EB2441BC8200B0DD6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B452E5ED2441BC8200B0DD6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -309,6 +327,13 @@
 		B452E6202441FBB800B0DD6F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B45188BE244244860050102E /* Distributor.swift */,
+				B45188C0244247490050102E /* Order.swift */,
+				B45188C2244247AF0050102E /* OrderStatus.swift */,
+				B45188C4244249950050102E /* Venue.swift */,
+				B45188C624424B0D0050102E /* Note.swift */,
+				B45188CC244251510050102E /* Product.swift */,
+				B45188CE24425E270050102E /* PaginationMeta.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -416,6 +441,8 @@
 			isa = PBXGroup;
 			children = (
 				B452E68F2442147300B0DD6F /* URL+QueryParameters.swift */,
+				B45188C824424D070050102E /* Date+Milliseconds.swift */,
+				B45188CA24424F9C0050102E /* DateFormatter+Utilites.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -710,18 +737,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				B452E687244208B700B0DD6F /* Json.swift in Sources */,
+				B45188C5244249950050102E /* Venue.swift in Sources */,
+				B45188BF244244860050102E /* Distributor.swift in Sources */,
+				B45188CB24424F9C0050102E /* DateFormatter+Utilites.swift in Sources */,
 				B452E6232441FDC100B0DD6F /* HttpMethod.swift in Sources */,
 				B452E62D2441FEEA00B0DD6F /* Orderable.swift in Sources */,
+				B45188C724424B0D0050102E /* Note.swift in Sources */,
 				B452E6272441FE2700B0DD6F /* Coordinator.swift in Sources */,
 				B452E689244209A400B0DD6F /* Response.swift in Sources */,
 				B452E68D24420F3800B0DD6F /* ContentType.swift in Sources */,
 				B452E62F244200DF00B0DD6F /* OrdersViewController.swift in Sources */,
+				B45188CF24425E270050102E /* PaginationMeta.swift in Sources */,
 				B452E5EC2441BC8200B0DD6F /* AppDelegate.swift in Sources */,
 				B452E68B24420B6E00B0DD6F /* HttpClient.swift in Sources */,
 				B452E62B2441FEBD00B0DD6F /* OrdersCoordinator.swift in Sources */,
 				B452E6902442147300B0DD6F /* URL+QueryParameters.swift in Sources */,
+				B45188C3244247AF0050102E /* OrderStatus.swift in Sources */,
+				B45188C1244247490050102E /* Order.swift in Sources */,
 				B452E5EE2441BC8200B0DD6F /* SceneDelegate.swift in Sources */,
+				B45188C924424D070050102E /* Date+Milliseconds.swift in Sources */,
 				B452E6292441FE4500B0DD6F /* Storyboarded.swift in Sources */,
+				B45188CD244251510050102E /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
