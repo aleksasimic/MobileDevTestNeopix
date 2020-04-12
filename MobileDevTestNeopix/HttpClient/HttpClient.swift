@@ -10,7 +10,7 @@ public struct HttpClient {
         self.session = session
     }
     
-    public func sendRequest(method: HttpMethod, url: URL, body:[String: AnyObject]?, headers: [String: String]?) -> Observable<Response> {
+    public func sendRequest(method: HttpMethod, url: URL, body:[String: AnyObject]? = nil , headers: [String: String]? = nil) -> Observable<Response> {
         
         let request = NSMutableURLRequest(url: url)
         request.httpMethod = method.rawValue

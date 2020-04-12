@@ -75,11 +75,12 @@
 		B452E689244209A400B0DD6F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E688244209A400B0DD6F /* Response.swift */; };
 		B452E68B24420B6E00B0DD6F /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E68A24420B6E00B0DD6F /* HttpClient.swift */; };
 		B452E68D24420F3800B0DD6F /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E68C24420F3800B0DD6F /* ContentType.swift */; };
-		B452E6902442147300B0DD6F /* URL+QueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E68F2442147300B0DD6F /* URL+QueryParameters.swift */; };
+		B452E6902442147300B0DD6F /* URL+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E68F2442147300B0DD6F /* URL+Utilities.swift */; };
 		B46A90ED24430E7D00933856 /* ResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90EC24430E7D00933856 /* ResponseDecoder.swift */; };
 		B46A90F024430F0B00933856 /* DistributorDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90EF24430F0B00933856 /* DistributorDecoder.swift */; };
 		B46A90F2244311FC00933856 /* OrdersDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90F1244311FC00933856 /* OrdersDecoder.swift */; };
 		B46A90F42443122000933856 /* OrderDetailsDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90F32443122000933856 /* OrderDetailsDecoder.swift */; };
+		B46A90F724431A4B00933856 /* OrdersNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90F624431A4B00933856 /* OrdersNetworkService.swift */; };
 		C681E6321D1426E453DC9CB8 /* Pods_MobileDevTestNeopix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D047797360D5EFC2B8E1C30 /* Pods_MobileDevTestNeopix.framework */; };
 /* End PBXBuildFile section */
 
@@ -180,11 +181,12 @@
 		B452E688244209A400B0DD6F /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		B452E68A24420B6E00B0DD6F /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		B452E68C24420F3800B0DD6F /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
-		B452E68F2442147300B0DD6F /* URL+QueryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryParameters.swift"; sourceTree = "<group>"; };
+		B452E68F2442147300B0DD6F /* URL+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Utilities.swift"; sourceTree = "<group>"; };
 		B46A90EC24430E7D00933856 /* ResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecoder.swift; sourceTree = "<group>"; };
 		B46A90EF24430F0B00933856 /* DistributorDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorDecoder.swift; sourceTree = "<group>"; };
 		B46A90F1244311FC00933856 /* OrdersDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersDecoder.swift; sourceTree = "<group>"; };
 		B46A90F32443122000933856 /* OrderDetailsDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsDecoder.swift; sourceTree = "<group>"; };
+		B46A90F624431A4B00933856 /* OrdersNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersNetworkService.swift; sourceTree = "<group>"; };
 		CEC7CBEDAF38016FFFB94332 /* Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E9327BE78C945919E6CD0051 /* Pods-MobileDevTestNeopixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopixTests.release.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopixTests/Pods-MobileDevTestNeopixTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -313,11 +315,12 @@
 		B452E61E2441FBA700B0DD6F /* Orders Module */ = {
 			isa = PBXGroup;
 			children = (
-				B46A90EE24430EE500933856 /* Parsers */,
-				B452E6202441FBB800B0DD6F /* Models */,
 				B452E630244202CC00B0DD6F /* ViewModels */,
 				B452E631244202D700B0DD6F /* DataSources */,
 				B452E61F2441FBB000B0DD6F /* ViewControllers */,
+				B452E6202441FBB800B0DD6F /* Models */,
+				B46A90EE24430EE500933856 /* Parsers */,
+				B46A90F524431A0F00933856 /* Network */,
 				B452E62A2441FEBD00B0DD6F /* OrdersCoordinator.swift */,
 				B452E62C2441FEEA00B0DD6F /* Orderable.swift */,
 				B452E5F12441BC8200B0DD6F /* Orders.storyboard */,
@@ -450,7 +453,7 @@
 		B452E68E2442145300B0DD6F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B452E68F2442147300B0DD6F /* URL+QueryParameters.swift */,
+				B452E68F2442147300B0DD6F /* URL+Utilities.swift */,
 				B45188C824424D070050102E /* Date+Milliseconds.swift */,
 				B45188CA24424F9C0050102E /* DateFormatter+Utilites.swift */,
 			);
@@ -465,6 +468,14 @@
 				B46A90F32443122000933856 /* OrderDetailsDecoder.swift */,
 			);
 			path = Parsers;
+			sourceTree = "<group>";
+		};
+		B46A90F524431A0F00933856 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B46A90F624431A4B00933856 /* OrdersNetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		C726594126BEA4AC37B4C4FB /* Frameworks */ = {
@@ -772,8 +783,9 @@
 				B452E5EC2441BC8200B0DD6F /* AppDelegate.swift in Sources */,
 				B452E68B24420B6E00B0DD6F /* HttpClient.swift in Sources */,
 				B452E62B2441FEBD00B0DD6F /* OrdersCoordinator.swift in Sources */,
-				B452E6902442147300B0DD6F /* URL+QueryParameters.swift in Sources */,
+				B452E6902442147300B0DD6F /* URL+Utilities.swift in Sources */,
 				B45188C3244247AF0050102E /* OrderStatus.swift in Sources */,
+				B46A90F724431A4B00933856 /* OrdersNetworkService.swift in Sources */,
 				B46A90F42443122000933856 /* OrderDetailsDecoder.swift in Sources */,
 				B46A90ED24430E7D00933856 /* ResponseDecoder.swift in Sources */,
 				B45188C1244247490050102E /* Order.swift in Sources */,
