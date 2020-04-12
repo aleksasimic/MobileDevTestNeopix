@@ -1,4 +1,5 @@
 import UIKit
+import Foundation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -14,7 +15,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navigationController = UINavigationController()
         navigationController.isNavigationBarHidden = true
-        coordinator = OrdersCoordinator(withNavigationController: navigationController)
+        
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        let httpClient = HttpClient(session: session)
+        let ordersContainer = OrdersContainer(baseApiUrl: WebConstants
+            .BaseApiUrl, httpClient: httpClient)
+        coordinator = OrdersCoordinator(withNavigationController: navigationController, container: ordersContainer)
         coordinator?.start()
         
         applicationWindow.rootViewController = navigationController

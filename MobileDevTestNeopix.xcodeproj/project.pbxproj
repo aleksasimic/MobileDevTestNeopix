@@ -30,7 +30,6 @@
 		B452E6292441FE4500B0DD6F /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E6282441FE4500B0DD6F /* Storyboarded.swift */; };
 		B452E62B2441FEBD00B0DD6F /* OrdersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E62A2441FEBD00B0DD6F /* OrdersCoordinator.swift */; };
 		B452E62D2441FEEA00B0DD6F /* Orderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E62C2441FEEA00B0DD6F /* Orderable.swift */; };
-		B452E62F244200DF00B0DD6F /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E62E244200DF00B0DD6F /* OrdersViewController.swift */; };
 		B452E65D244205AD00B0DD6F /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E635244205AC00B0DD6F /* Roboto-Bold.ttf */; };
 		B452E65E244205AD00B0DD6F /* Metropolis-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B452E636244205AC00B0DD6F /* Metropolis-SemiBoldItalic.otf */; };
 		B452E65F244205AD00B0DD6F /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B452E637244205AC00B0DD6F /* Rubik-MediumItalic.ttf */; };
@@ -81,6 +80,11 @@
 		B46A90F2244311FC00933856 /* OrdersDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90F1244311FC00933856 /* OrdersDecoder.swift */; };
 		B46A90F42443122000933856 /* OrderDetailsDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90F32443122000933856 /* OrderDetailsDecoder.swift */; };
 		B46A90F724431A4B00933856 /* OrdersNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90F624431A4B00933856 /* OrdersNetworkService.swift */; };
+		B46A90F92443277B00933856 /* OrdersContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90F82443277B00933856 /* OrdersContainer.swift */; };
+		B46A90FC2443299F00933856 /* WebConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90FB2443299F00933856 /* WebConstants.swift */; };
+		B46A90FE24432D5500933856 /* OrdersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90FD24432D5500933856 /* OrdersListViewController.swift */; };
+		B46A910024432EA300933856 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90FF24432EA300933856 /* UIViewController+Rx.swift */; };
+		B46A910224432F6600933856 /* OrdersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A910124432F6600933856 /* OrdersListViewModel.swift */; };
 		C681E6321D1426E453DC9CB8 /* Pods_MobileDevTestNeopix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D047797360D5EFC2B8E1C30 /* Pods_MobileDevTestNeopix.framework */; };
 /* End PBXBuildFile section */
 
@@ -136,7 +140,6 @@
 		B452E6282441FE4500B0DD6F /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		B452E62A2441FEBD00B0DD6F /* OrdersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCoordinator.swift; sourceTree = "<group>"; };
 		B452E62C2441FEEA00B0DD6F /* Orderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orderable.swift; sourceTree = "<group>"; };
-		B452E62E244200DF00B0DD6F /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		B452E635244205AC00B0DD6F /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../Neopix Assets/Fonts/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		B452E636244205AC00B0DD6F /* Metropolis-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Metropolis-SemiBoldItalic.otf"; path = "../../../../Neopix Assets/Fonts/metropolis/Metropolis-SemiBoldItalic.otf"; sourceTree = "<group>"; };
 		B452E637244205AC00B0DD6F /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-MediumItalic.ttf"; path = "../../../../Neopix Assets/Fonts/Rubik/Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -187,6 +190,11 @@
 		B46A90F1244311FC00933856 /* OrdersDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersDecoder.swift; sourceTree = "<group>"; };
 		B46A90F32443122000933856 /* OrderDetailsDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsDecoder.swift; sourceTree = "<group>"; };
 		B46A90F624431A4B00933856 /* OrdersNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersNetworkService.swift; sourceTree = "<group>"; };
+		B46A90F82443277B00933856 /* OrdersContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersContainer.swift; sourceTree = "<group>"; };
+		B46A90FB2443299F00933856 /* WebConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebConstants.swift; sourceTree = "<group>"; };
+		B46A90FD24432D5500933856 /* OrdersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListViewController.swift; sourceTree = "<group>"; };
+		B46A90FF24432EA300933856 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		B46A910124432F6600933856 /* OrdersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListViewModel.swift; sourceTree = "<group>"; };
 		CEC7CBEDAF38016FFFB94332 /* Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E9327BE78C945919E6CD0051 /* Pods-MobileDevTestNeopixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopixTests.release.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopixTests/Pods-MobileDevTestNeopixTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -316,13 +324,14 @@
 			isa = PBXGroup;
 			children = (
 				B452E630244202CC00B0DD6F /* ViewModels */,
-				B452E631244202D700B0DD6F /* DataSources */,
 				B452E61F2441FBB000B0DD6F /* ViewControllers */,
+				B452E631244202D700B0DD6F /* DataSources */,
 				B452E6202441FBB800B0DD6F /* Models */,
 				B46A90EE24430EE500933856 /* Parsers */,
 				B46A90F524431A0F00933856 /* Network */,
 				B452E62A2441FEBD00B0DD6F /* OrdersCoordinator.swift */,
 				B452E62C2441FEEA00B0DD6F /* Orderable.swift */,
+				B46A90F82443277B00933856 /* OrdersContainer.swift */,
 				B452E5F12441BC8200B0DD6F /* Orders.storyboard */,
 			);
 			path = "Orders Module";
@@ -331,7 +340,7 @@
 		B452E61F2441FBB000B0DD6F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B452E62E244200DF00B0DD6F /* OrdersViewController.swift */,
+				B46A90FD24432D5500933856 /* OrdersListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -362,6 +371,7 @@
 		B452E6242441FE0D00B0DD6F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B46A90FA2443297C00933856 /* Constants */,
 				B452E68E2442145300B0DD6F /* Extensions */,
 				B452E6252441FE1900B0DD6F /* Coordinator */,
 			);
@@ -380,6 +390,7 @@
 		B452E630244202CC00B0DD6F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B46A910124432F6600933856 /* OrdersListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -456,6 +467,7 @@
 				B452E68F2442147300B0DD6F /* URL+Utilities.swift */,
 				B45188C824424D070050102E /* Date+Milliseconds.swift */,
 				B45188CA24424F9C0050102E /* DateFormatter+Utilites.swift */,
+				B46A90FF24432EA300933856 /* UIViewController+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -476,6 +488,14 @@
 				B46A90F624431A4B00933856 /* OrdersNetworkService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		B46A90FA2443297C00933856 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B46A90FB2443299F00933856 /* WebConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		C726594126BEA4AC37B4C4FB /* Frameworks */ = {
@@ -770,14 +790,18 @@
 				B452E687244208B700B0DD6F /* Json.swift in Sources */,
 				B45188C5244249950050102E /* Venue.swift in Sources */,
 				B45188BF244244860050102E /* Distributor.swift in Sources */,
+				B46A90FC2443299F00933856 /* WebConstants.swift in Sources */,
 				B45188CB24424F9C0050102E /* DateFormatter+Utilites.swift in Sources */,
 				B452E6232441FDC100B0DD6F /* HttpMethod.swift in Sources */,
 				B452E62D2441FEEA00B0DD6F /* Orderable.swift in Sources */,
+				B46A90F92443277B00933856 /* OrdersContainer.swift in Sources */,
 				B45188C724424B0D0050102E /* Note.swift in Sources */,
 				B452E6272441FE2700B0DD6F /* Coordinator.swift in Sources */,
+				B46A910024432EA300933856 /* UIViewController+Rx.swift in Sources */,
 				B452E689244209A400B0DD6F /* Response.swift in Sources */,
+				B46A910224432F6600933856 /* OrdersListViewModel.swift in Sources */,
 				B452E68D24420F3800B0DD6F /* ContentType.swift in Sources */,
-				B452E62F244200DF00B0DD6F /* OrdersViewController.swift in Sources */,
+				B46A90FE24432D5500933856 /* OrdersListViewController.swift in Sources */,
 				B45188CF24425E270050102E /* PaginationMeta.swift in Sources */,
 				B46A90F024430F0B00933856 /* DistributorDecoder.swift in Sources */,
 				B452E5EC2441BC8200B0DD6F /* AppDelegate.swift in Sources */,
