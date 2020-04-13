@@ -31,7 +31,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nw9-SX-T8p">
                                         <rect key="frame" x="10" y="0.0" width="394" height="852"/>
-                                        <color key="backgroundColor" red="0.9137254901960784" green="0.92549019607843142" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" rowHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="8Co-BQ-5qN" customClass="OrderTableViewCell" customModule="MobileDevTestNeopix" customModuleProvider="target">
@@ -59,7 +59,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marriott Hotel Bar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N42-0B-TdL">
-                                                                    <rect key="frame" x="56.000000000000007" y="16" width="122.66666666666669" height="17"/>
+                                                                    <rect key="frame" x="56" y="16" width="112" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Metropolis-SemiBold" family="Metropolis" pointSize="14"/>
                                                                     <color key="textColor" red="0.1450980392" green="0.14901960780000001" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -72,19 +72,19 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18/11/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaE-uE-hIf">
-                                                                    <rect key="frame" x="75" y="38" width="58.666666666666657" height="14"/>
+                                                                    <rect key="frame" x="75" y="38" width="61.666666666666657" height="14"/>
                                                                     <fontDescription key="fontDescription" name="Metropolis-Medium" family="Metropolis" pointSize="12"/>
                                                                     <color key="textColor" red="0.52941176469999995" green="0.56470588239999997" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$18,150.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sp1-w7-j5F">
-                                                                    <rect key="frame" x="306" y="16" width="76" height="14"/>
+                                                                    <rect key="frame" x="311.66666666666669" y="15.999999999999998" width="70.333333333333314" height="16.333333333333329"/>
                                                                     <fontDescription key="fontDescription" name="Metropolis-Bold" family="Metropolis" pointSize="14"/>
                                                                     <color key="textColor" red="0.1450980392" green="0.14901960780000001" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="PARTIALLY ACCEPTED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0q3-84-poC">
-                                                                    <rect key="frame" x="268" y="37" width="114" height="18"/>
+                                                                    <rect key="frame" x="276.33333333333331" y="39.333333333333336" width="105.66666666666669" height="15.666666666666664"/>
                                                                     <color key="backgroundColor" red="0.30196078430000001" green="0.48627450979999998" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" name="Metropolis-Bold" family="Metropolis" pointSize="10"/>
                                                                     <nil key="textColor"/>
