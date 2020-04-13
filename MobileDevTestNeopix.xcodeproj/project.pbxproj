@@ -17,6 +17,7 @@
 		B44E53272444925A00B74005 /* NumberFormatter+Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E53262444925A00B74005 /* NumberFormatter+Utilites.swift */; };
 		B44E532A244493A500B74005 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E5329244493A500B74005 /* Money.swift */; };
 		B44E532C2444B38F00B74005 /* UIImageView+Downloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E532B2444B38F00B74005 /* UIImageView+Downloadable.swift */; };
+		B44E532E2444D57200B74005 /* UILabel+Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E532D2444D57200B74005 /* UILabel+Utilites.swift */; };
 		B45188BF244244860050102E /* Distributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188BE244244860050102E /* Distributor.swift */; };
 		B45188C1244247490050102E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188C0244247490050102E /* Order.swift */; };
 		B45188C3244247AF0050102E /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188C2244247AF0050102E /* OrderStatus.swift */; };
@@ -129,6 +130,7 @@
 		B44E53262444925A00B74005 /* NumberFormatter+Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Utilites.swift"; sourceTree = "<group>"; };
 		B44E5329244493A500B74005 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		B44E532B2444B38F00B74005 /* UIImageView+Downloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Downloadable.swift"; sourceTree = "<group>"; };
+		B44E532D2444D57200B74005 /* UILabel+Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utilites.swift"; sourceTree = "<group>"; };
 		B45188BE244244860050102E /* Distributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distributor.swift; sourceTree = "<group>"; };
 		B45188C0244247490050102E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B45188C2244247AF0050102E /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 				B44E53242444881E00B74005 /* UIColor+Additions.swift */,
 				B44E53262444925A00B74005 /* NumberFormatter+Utilites.swift */,
 				B44E532B2444B38F00B74005 /* UIImageView+Downloadable.swift */,
+				B44E532D2444D57200B74005 /* UILabel+Utilites.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -864,6 +867,7 @@
 				B45188C3244247AF0050102E /* OrderStatus.swift in Sources */,
 				B46A90F724431A4B00933856 /* OrdersNetworkService.swift in Sources */,
 				B46A90F42443122000933856 /* OrderDetailsDecoder.swift in Sources */,
+				B44E532E2444D57200B74005 /* UILabel+Utilites.swift in Sources */,
 				B46A90ED24430E7D00933856 /* ResponseDecoder.swift in Sources */,
 				B45188C1244247490050102E /* Order.swift in Sources */,
 				B44E531E24446E1B00B74005 /* OrderTableViewCell.swift in Sources */,
