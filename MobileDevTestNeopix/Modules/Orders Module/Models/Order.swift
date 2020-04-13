@@ -7,8 +7,8 @@ public struct Order {
     let orderedAt: Date
     var acceptedAt: Date? = nil
     var declinedAt: Date? = nil
-    let amount: Int?
-    let totalAmount: Int?
+    let amount: Money?
+    let totalAmount: Money?
     let venue: Venue
     let productList: [Product]?
 }
@@ -35,8 +35,11 @@ extension Order: Decodable {
             declinedAt = Date(fromMilliseconds: declined)
         }
         
-        amount = try container.decodeIfPresent(Int.self, forKey: .amount)
-        totalAmount = try container.decodeIfPresent(Int.self, forKey: .totalAmount)
+        let amountNumber = try container.decodeIfPresent(Double.self, forKey: .amount) ?? 0.0
+        amount = Money(amount: amountNumber)
+        let totalAmountNumber = try container.decodeIfPresent(Double.self, forKey: .totalAmount) ?? 0.0
+        totalAmount = Money(amount: totalAmountNumber)
+        
         venue = try container.decode(Venue.self, forKey: .venue)
         productList = try container.decodeIfPresent([Product].self, forKey: .productList)
     }

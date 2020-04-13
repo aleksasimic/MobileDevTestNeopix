@@ -6,7 +6,7 @@ public struct Product {
     let imageUrl: String
     let price: String
     let quantity: Int
-    let totalPrice: Int
+    let totalPrice: Money
 }
 
 extension Product: Decodable {
@@ -18,7 +18,8 @@ extension Product: Decodable {
         imageUrl = try container.decode(String.self, forKey: .imageUrl)
         price = try container.decode(String.self, forKey: .price)
         quantity = try container.decode(Int.self, forKey: .quantity)
-        totalPrice = try container.decode(Int.self, forKey: .totalPrice)
+        let totalPriceNumber = try container.decode(Double.self, forKey: .totalPrice)
+        totalPrice = Money(amount: totalPriceNumber)
     }
     
     private enum CodingKeys: String, CodingKey {

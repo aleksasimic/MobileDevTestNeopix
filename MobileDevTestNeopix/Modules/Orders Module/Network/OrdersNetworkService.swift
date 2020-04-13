@@ -7,6 +7,12 @@ protocol OrdersNetworkServiceProtocol {
     func getOrderDetails(withOrderId orderId: Int) -> Observable<Order>
 }
 
+extension OrdersNetworkServiceProtocol {
+    func getOrders(nextId: Int? = nil, limit: Int? = nil) -> Observable<([Order], PaginationMeta)> {
+        return getOrders(nextId: nextId, limit: limit)
+    }
+}
+
 struct OrdersNetworkService: OrdersNetworkServiceProtocol {
     private let httpClient: HttpClient
     private let baseApiUrl: String

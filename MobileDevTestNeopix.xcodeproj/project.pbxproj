@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		3EB89C96B3A91D957E2D859E /* Pods_MobileDevTestNeopixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C558E43C31D7EE90201E1F9 /* Pods_MobileDevTestNeopixTests.framework */; };
 		770F5E1DB52167C292CEBB1A /* Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7BF7F83B42687CF2AA0D70 /* Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework */; };
+		B44E531B24446BE000B74005 /* OrdersListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E531A24446BE000B74005 /* OrdersListDataSource.swift */; };
+		B44E531E24446E1B00B74005 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E531D24446E1B00B74005 /* OrderTableViewCell.swift */; };
+		B44E5321244473DD00B74005 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E5320244473DD00B74005 /* GradientView.swift */; };
+		B44E5323244479BA00B74005 /* UIView+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E5322244479BA00B74005 /* UIView+Corners.swift */; };
+		B44E53252444881E00B74005 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E53242444881E00B74005 /* UIColor+Additions.swift */; };
+		B44E53272444925A00B74005 /* NumberFormatter+Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E53262444925A00B74005 /* NumberFormatter+Utilites.swift */; };
+		B44E532A244493A500B74005 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E5329244493A500B74005 /* Money.swift */; };
+		B44E532C2444B38F00B74005 /* UIImageView+Downloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E532B2444B38F00B74005 /* UIImageView+Downloadable.swift */; };
 		B45188BF244244860050102E /* Distributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188BE244244860050102E /* Distributor.swift */; };
 		B45188C1244247490050102E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188C0244247490050102E /* Order.swift */; };
 		B45188C3244247AF0050102E /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188C2244247AF0050102E /* OrderStatus.swift */; };
@@ -113,6 +121,14 @@
 		21FBE0A540E5CD515B82F66D /* Pods-MobileDevTestNeopixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopixTests.debug.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopixTests/Pods-MobileDevTestNeopixTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D047797360D5EFC2B8E1C30 /* Pods_MobileDevTestNeopix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileDevTestNeopix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7BF7F83B42687CF2AA0D70 /* Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileDevTestNeopix_MobileDevTestNeopixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B44E531A24446BE000B74005 /* OrdersListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListDataSource.swift; sourceTree = "<group>"; };
+		B44E531D24446E1B00B74005 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		B44E5320244473DD00B74005 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		B44E5322244479BA00B74005 /* UIView+Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Corners.swift"; sourceTree = "<group>"; };
+		B44E53242444881E00B74005 /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		B44E53262444925A00B74005 /* NumberFormatter+Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Utilites.swift"; sourceTree = "<group>"; };
+		B44E5329244493A500B74005 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		B44E532B2444B38F00B74005 /* UIImageView+Downloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Downloadable.swift"; sourceTree = "<group>"; };
 		B45188BE244244860050102E /* Distributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distributor.swift; sourceTree = "<group>"; };
 		B45188C0244247490050102E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B45188C2244247AF0050102E /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
@@ -240,6 +256,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B44E531C24446E0200B74005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B44E531D24446E1B00B74005 /* OrderTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B44E531F244473CB00B74005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B44E5320244473DD00B74005 /* GradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B44E53282444939900B74005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B44E5329244493A500B74005 /* Money.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B452E5DF2441BC8200B0DD6F = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +363,7 @@
 		B452E61E2441FBA700B0DD6F /* Orders Module */ = {
 			isa = PBXGroup;
 			children = (
+				B44E531C24446E0200B74005 /* Views */,
 				B452E630244202CC00B0DD6F /* ViewModels */,
 				B452E61F2441FBB000B0DD6F /* ViewControllers */,
 				B452E631244202D700B0DD6F /* DataSources */,
@@ -371,6 +412,8 @@
 		B452E6242441FE0D00B0DD6F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B44E53282444939900B74005 /* Models */,
+				B44E531F244473CB00B74005 /* Views */,
 				B46A90FA2443297C00933856 /* Constants */,
 				B452E68E2442145300B0DD6F /* Extensions */,
 				B452E6252441FE1900B0DD6F /* Coordinator */,
@@ -398,6 +441,7 @@
 		B452E631244202D700B0DD6F /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				B44E531A24446BE000B74005 /* OrdersListDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -468,6 +512,10 @@
 				B45188C824424D070050102E /* Date+Milliseconds.swift */,
 				B45188CA24424F9C0050102E /* DateFormatter+Utilites.swift */,
 				B46A90FF24432EA300933856 /* UIViewController+Rx.swift */,
+				B44E5322244479BA00B74005 /* UIView+Corners.swift */,
+				B44E53242444881E00B74005 /* UIColor+Additions.swift */,
+				B44E53262444925A00B74005 /* NumberFormatter+Utilites.swift */,
+				B44E532B2444B38F00B74005 /* UIImageView+Downloadable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -789,6 +837,7 @@
 			files = (
 				B452E687244208B700B0DD6F /* Json.swift in Sources */,
 				B45188C5244249950050102E /* Venue.swift in Sources */,
+				B44E5323244479BA00B74005 /* UIView+Corners.swift in Sources */,
 				B45188BF244244860050102E /* Distributor.swift in Sources */,
 				B46A90FC2443299F00933856 /* WebConstants.swift in Sources */,
 				B45188CB24424F9C0050102E /* DateFormatter+Utilites.swift in Sources */,
@@ -798,22 +847,29 @@
 				B45188C724424B0D0050102E /* Note.swift in Sources */,
 				B452E6272441FE2700B0DD6F /* Coordinator.swift in Sources */,
 				B46A910024432EA300933856 /* UIViewController+Rx.swift in Sources */,
+				B44E531B24446BE000B74005 /* OrdersListDataSource.swift in Sources */,
 				B452E689244209A400B0DD6F /* Response.swift in Sources */,
 				B46A910224432F6600933856 /* OrdersListViewModel.swift in Sources */,
 				B452E68D24420F3800B0DD6F /* ContentType.swift in Sources */,
+				B44E532C2444B38F00B74005 /* UIImageView+Downloadable.swift in Sources */,
 				B46A90FE24432D5500933856 /* OrdersListViewController.swift in Sources */,
+				B44E53252444881E00B74005 /* UIColor+Additions.swift in Sources */,
 				B45188CF24425E270050102E /* PaginationMeta.swift in Sources */,
 				B46A90F024430F0B00933856 /* DistributorDecoder.swift in Sources */,
 				B452E5EC2441BC8200B0DD6F /* AppDelegate.swift in Sources */,
 				B452E68B24420B6E00B0DD6F /* HttpClient.swift in Sources */,
 				B452E62B2441FEBD00B0DD6F /* OrdersCoordinator.swift in Sources */,
 				B452E6902442147300B0DD6F /* URL+Utilities.swift in Sources */,
+				B44E5321244473DD00B74005 /* GradientView.swift in Sources */,
 				B45188C3244247AF0050102E /* OrderStatus.swift in Sources */,
 				B46A90F724431A4B00933856 /* OrdersNetworkService.swift in Sources */,
 				B46A90F42443122000933856 /* OrderDetailsDecoder.swift in Sources */,
 				B46A90ED24430E7D00933856 /* ResponseDecoder.swift in Sources */,
 				B45188C1244247490050102E /* Order.swift in Sources */,
+				B44E531E24446E1B00B74005 /* OrderTableViewCell.swift in Sources */,
 				B452E5EE2441BC8200B0DD6F /* SceneDelegate.swift in Sources */,
+				B44E532A244493A500B74005 /* Money.swift in Sources */,
+				B44E53272444925A00B74005 /* NumberFormatter+Utilites.swift in Sources */,
 				B45188C924424D070050102E /* Date+Milliseconds.swift in Sources */,
 				B452E6292441FE4500B0DD6F /* Storyboarded.swift in Sources */,
 				B45188CD244251510050102E /* Product.swift in Sources */,

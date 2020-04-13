@@ -10,6 +10,8 @@ class OrdersListViewController: UIViewController, Storyboarded {
     
     private let bag = DisposeBag()
     
+    @IBOutlet weak var ordersTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -20,6 +22,7 @@ private extension OrdersListViewController {
     func setup() {
         if let viewModel = createViewModel() {
             bindViewModel(viewModel)
+            setupDataSource(withData: viewModel.orders)
         }
     }
     
@@ -34,5 +37,9 @@ private extension OrdersListViewController {
                 print("Logo\($0)")
             })
             .disposed(by: bag)
+    }
+    
+    func setupDataSource(withData data: Observable<[Order]>) {
+        _ = OrdersListDataSource(withTableView: ordersTableView, orders: data)
     }
 }
