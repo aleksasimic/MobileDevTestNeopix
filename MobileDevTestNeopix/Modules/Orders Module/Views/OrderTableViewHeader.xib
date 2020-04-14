@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Metropolis-Bold.otf">
+            <string>Metropolis-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="OrderTableViewHeader" customModule="MobileDevTestNeopix" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-dot" translatesAutoresizingMaskIntoConstraints="NO" id="OsY-XO-6LC">
+                    <rect key="frame" x="6" y="16" width="12" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="12" id="0Ng-B2-QY6"/>
+                        <constraint firstAttribute="height" constant="12" id="RIo-HX-Hlr"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtu-Kj-sTU">
+                    <rect key="frame" x="11" y="28" width="2" height="4"/>
+                    <color key="backgroundColor" red="0.91372549020000005" green="0.92549019610000005" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="2" id="Bsh-1l-ZjE"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOVEMBER 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRn-bI-6Au">
+                    <rect key="frame" x="22" y="17" width="93.5" height="11"/>
+                    <fontDescription key="fontDescription" name="Metropolis-Bold" family="Metropolis" pointSize="11"/>
+                    <color key="textColor" red="0.52941176469999995" green="0.56470588239999997" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MRn-bI-6Au" secondAttribute="trailing" id="4bU-1K-ylF"/>
+                <constraint firstAttribute="bottom" secondItem="Rtu-Kj-sTU" secondAttribute="bottom" id="52I-Z5-rYs"/>
+                <constraint firstItem="MRn-bI-6Au" firstAttribute="leading" secondItem="OsY-XO-6LC" secondAttribute="trailing" constant="4" id="7Yc-QU-VF8"/>
+                <constraint firstItem="OsY-XO-6LC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="EvE-vt-l9z"/>
+                <constraint firstItem="MRn-bI-6Au" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="OMD-rv-KvS"/>
+                <constraint firstItem="Rtu-Kj-sTU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="11" id="Ygf-kg-tRG"/>
+                <constraint firstAttribute="bottom" secondItem="OsY-XO-6LC" secondAttribute="bottom" constant="4" id="kVa-hj-ceu"/>
+                <constraint firstItem="OsY-XO-6LC" firstAttribute="bottom" secondItem="Rtu-Kj-sTU" secondAttribute="top" id="kcx-Y8-agw"/>
+                <constraint firstAttribute="bottom" secondItem="MRn-bI-6Au" secondAttribute="bottom" constant="4" id="qTt-Hx-9OY"/>
+                <constraint firstItem="OsY-XO-6LC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="r2T-Mg-scg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="monthAndYearLabel" destination="MRn-bI-6Au" id="4mT-n3-qJc"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="104"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon-dot" width="12" height="12"/>
+    </resources>
+</document>

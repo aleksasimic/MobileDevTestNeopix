@@ -23,7 +23,7 @@ private extension OrdersListViewController {
     func setup() {
         if let viewModel = createViewModel() {
             bindViewModel(viewModel)
-            setupDataSource(withData: viewModel.orders)
+            setupDataSource(withData: viewModel.ordersWithSections)
         }
     }
     
@@ -32,26 +32,27 @@ private extension OrdersListViewController {
     }
     
     func bindViewModel(_ viewModel: OrdersListViewModel) {
-        viewModel.distributorLogoUrl
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: {
-                print("Logo\($0)")
-            })
-            .disposed(by: bag)
+//        viewModel.distributorLogoUrl
+//            .observeOn(MainScheduler.instance)
+//            .subscribe(onNext: {
+//                print("Logo\($0)")
+//            })
+//            .disposed(by: bag)
+//
+//        viewModel.orders
+//            .observeOn(MainScheduler.instance)
+//            .subscribe(onNext: {
+//                print("priv")
+//                print($0.count)
+//            })
+//            .disposed(by: bag)
         
-        viewModel.orders
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: {
-                print("priv")
-                print($0.count)
-            })
-            .disposed(by: bag)
-        
-        viewModel.errors
+        viewModel.ordersWithSections
         .observeOn(MainScheduler.instance)
         .subscribe(onNext: {
-            print("priv")
-            print($0)
+            for item in $0 {
+                print(item.monthAndYearData)
+            }
         })
         .disposed(by: bag)
         
@@ -64,7 +65,7 @@ private extension OrdersListViewController {
 //        .disposed(by: bag)
     }
     
-    func setupDataSource(withData data: Observable<[Order]>) {
+    func setupDataSource(withData data: Observable<[OrdersSection]>) {
         _ = OrdersListDataSource(withTableView: ordersTableView, orders: data, fetchMoreOrdersTrigger: fetchMoreOrdersTrigger)
     }
 }

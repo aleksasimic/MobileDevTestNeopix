@@ -8,6 +8,7 @@ struct OrdersListViewModel {
     let orders: Observable<[Order]>
     let totalAmountString: Observable<String>
     let errors: Observable<Error>
+    let ordersWithSections: Observable<[OrdersSection]>
     
     let nextIdPublisher = PublishSubject<Int?>()
     
@@ -67,6 +68,8 @@ struct OrdersListViewModel {
                 $0 + $1
         }
         
+        ordersWithSections = orders.mapToSectionOrders()
+        
         let initalOrdersTotalAmount = initialOrderResultsData
             .map {
                 $0.1.totalAmount
@@ -80,8 +83,41 @@ struct OrdersListViewModel {
         totalAmountString = Observable.of(initalOrdersTotalAmount, moreOrdersTotalAmount).merge()
             .map {
                 $0.amountWithCurrencySymbol
-            }
+        }
         
         errors = Observable.of(initalOrderResults.errors(), fetchMoreOrdersResult.errors(), distributorResults.errors()).merge()
     }
 }
+
+private extension ObservableType where Element == [Order] {
+    func mapToSectionOrders() -> Observable<[OrdersSection]> {
+        return map { orders in
+            let dictionary = Dictionary(grouping: orders, by:  { $0.monthAndYear })
+            let sortedKeys = dictionary.keys.sorted(by: {$0.month>$1.month})
+            var sectionOrders: [OrdersSection] = []
+            for key in sortedKeys {
+                sectionOrders.append(OrdersSection(monthAndYearData: key, orders: dictionary[key] ?? []))
+            }
+            return sectionOrders
+        }
+    }
+}
+
+
+
+//OrderSection
+//- monthAndYear
+//- orderList
+//data = [OrderSection]
+//
+//
+//
+//numberOfSections
+//data.count
+//
+//numberOfRowsInSection
+//data[section].orders.count
+//
+//cellForRowat indexPath
+//
+//data[indexPath.section][indexPath.row]

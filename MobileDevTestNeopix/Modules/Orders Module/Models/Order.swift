@@ -11,6 +11,8 @@ public struct Order {
     let totalAmount: Money?
     let venue: Venue
     let productList: [Product]?
+    
+    let monthAndYear: MonthAndYearData
 }
 
 extension Order: Decodable {
@@ -24,6 +26,8 @@ extension Order: Decodable {
         
         let orderedAtInMilliseconds = try container.decode(Int.self, forKey: .orderedAt)
         orderedAt = Date(fromMilliseconds: orderedAtInMilliseconds)
+        
+        monthAndYear = MonthAndYearData(month: orderedAt.month, year: orderedAt.year)
         
         let acceptedAtInMilliseconds = try container.decodeIfPresent(Int.self, forKey: .acceptedAt)
         if let accepted = acceptedAtInMilliseconds {
