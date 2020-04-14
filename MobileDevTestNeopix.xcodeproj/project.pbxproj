@@ -16,7 +16,7 @@
 		B44E53252444881E00B74005 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E53242444881E00B74005 /* UIColor+Additions.swift */; };
 		B44E53272444925A00B74005 /* NumberFormatter+Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E53262444925A00B74005 /* NumberFormatter+Utilites.swift */; };
 		B44E532A244493A500B74005 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E5329244493A500B74005 /* Money.swift */; };
-		B44E532C2444B38F00B74005 /* UIImageView+Downloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E532B2444B38F00B74005 /* UIImageView+Downloadable.swift */; };
+		B44E532C2444B38F00B74005 /* UIImageView+Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E532B2444B38F00B74005 /* UIImageView+Cacheable.swift */; };
 		B44E532E2444D57200B74005 /* UILabel+Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E532D2444D57200B74005 /* UILabel+Utilites.swift */; };
 		B45188BF244244860050102E /* Distributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188BE244244860050102E /* Distributor.swift */; };
 		B45188C1244247490050102E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188C0244247490050102E /* Order.swift */; };
@@ -129,7 +129,7 @@
 		B44E53242444881E00B74005 /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		B44E53262444925A00B74005 /* NumberFormatter+Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Utilites.swift"; sourceTree = "<group>"; };
 		B44E5329244493A500B74005 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
-		B44E532B2444B38F00B74005 /* UIImageView+Downloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Downloadable.swift"; sourceTree = "<group>"; };
+		B44E532B2444B38F00B74005 /* UIImageView+Cacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cacheable.swift"; sourceTree = "<group>"; };
 		B44E532D2444D57200B74005 /* UILabel+Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utilites.swift"; sourceTree = "<group>"; };
 		B45188BE244244860050102E /* Distributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distributor.swift; sourceTree = "<group>"; };
 		B45188C0244247490050102E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -517,7 +517,7 @@
 				B44E5322244479BA00B74005 /* UIView+Corners.swift */,
 				B44E53242444881E00B74005 /* UIColor+Additions.swift */,
 				B44E53262444925A00B74005 /* NumberFormatter+Utilites.swift */,
-				B44E532B2444B38F00B74005 /* UIImageView+Downloadable.swift */,
+				B44E532B2444B38F00B74005 /* UIImageView+Cacheable.swift */,
 				B44E532D2444D57200B74005 /* UILabel+Utilites.swift */,
 			);
 			path = Extensions;
@@ -854,7 +854,7 @@
 				B452E689244209A400B0DD6F /* Response.swift in Sources */,
 				B46A910224432F6600933856 /* OrdersListViewModel.swift in Sources */,
 				B452E68D24420F3800B0DD6F /* ContentType.swift in Sources */,
-				B44E532C2444B38F00B74005 /* UIImageView+Downloadable.swift in Sources */,
+				B44E532C2444B38F00B74005 /* UIImageView+Cacheable.swift in Sources */,
 				B46A90FE24432D5500933856 /* OrdersListViewController.swift in Sources */,
 				B44E53252444881E00B74005 /* UIColor+Additions.swift in Sources */,
 				B45188CF24425E270050102E /* PaginationMeta.swift in Sources */,

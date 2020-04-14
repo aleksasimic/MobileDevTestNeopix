@@ -21,7 +21,7 @@ extension Venue: Decodable {
         
         primaryContactName = try container.decodeIfPresent(String.self, forKey: .primaryContactName)
         primaryContactPhone = try container.decodeIfPresent(String.self, forKey: .primaryContactPhone)
-         secondaryContactName = try container.decodeIfPresent(String.self, forKey: .secondaryContactName)
+        secondaryContactName = try container.decodeIfPresent(String.self, forKey: .secondaryContactName)
         secondaryContactPhone = try container.decodeIfPresent(String.self, forKey: .secondaryContactPhone)
         address = try container.decodeIfPresent(String.self, forKey: .address)
     }

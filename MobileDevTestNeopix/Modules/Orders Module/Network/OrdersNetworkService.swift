@@ -7,11 +7,11 @@ protocol OrdersNetworkServiceProtocol {
     func getOrderDetails(withOrderId orderId: Int) -> Observable<Order>
 }
 
-extension OrdersNetworkServiceProtocol {
-    func getOrders(nextId: Int? = nil, limit: Int? = nil) -> Observable<([Order], PaginationMeta)> {
-        return getOrders(nextId: nextId, limit: limit)
-    }
-}
+//extension OrdersNetworkServiceProtocol {
+//    func getOrders(nextId: Int? = nil, limit: Int? = nil) -> Observable<([Order], PaginationMeta)> {
+//        return getOrders(nextId: nextId, limit: limit)
+//    }
+//}
 
 struct OrdersNetworkService: OrdersNetworkServiceProtocol {
     private let httpClient: HttpClient
@@ -39,7 +39,7 @@ struct OrdersNetworkService: OrdersNetworkServiceProtocol {
         if let ordersLimit = limit {
             queryParameters[Parameters.Limit] = "\(ordersLimit)"
         }
-        
+   
         let url = URL.url(withPath: Endpoints.OrderList, relativeTo: baseApiUrl).urlByAppendingQueryParameters(queryParameters)
         
         return httpClient.sendRequest(method: .Get, url: url)

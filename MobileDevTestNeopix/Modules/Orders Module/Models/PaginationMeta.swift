@@ -1,20 +1,21 @@
 import Foundation
 
 public struct PaginationMeta {
-    let nextId: Int
+    let nextId: Int?
     let count: Int
     let totalCount: Int
-    let totalAmount: Int
+    let totalAmount: Money
 }
 
 extension PaginationMeta: Decodable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        nextId = try container.decode(Int.self, forKey: .nextId)
+        nextId = try container.decodeIfPresent(Int.self, forKey: .nextId)
         count = try container.decode(Int.self, forKey: .count)
         totalCount = try container.decode(Int.self, forKey: .totalCount)
-        totalAmount = try container.decode(Int.self, forKey: .totalAmount)
+        let totalAmountNumber = try container.decode(Double.self, forKey: .totalAmount)
+        totalAmount = Money(amount: totalAmountNumber)
     }
     
     private enum CodingKeys: String, CodingKey {

@@ -29,8 +29,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u43-G0-XqJ" customClass="GradientView" customModule="MobileDevTestNeopix" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nw9-SX-T8p">
-                                        <rect key="frame" x="10" y="0.0" width="394" height="852"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nw9-SX-T8p">
+                                        <rect key="frame" x="10" y="500" width="394" height="352"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -168,7 +168,7 @@
                                     </tableView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="nw9-SX-T8p" firstAttribute="top" secondItem="u43-G0-XqJ" secondAttribute="top" id="5kf-qc-Cfr"/>
+                                    <constraint firstItem="nw9-SX-T8p" firstAttribute="top" secondItem="u43-G0-XqJ" secondAttribute="top" constant="500" id="5kf-qc-Cfr"/>
                                     <constraint firstAttribute="trailing" secondItem="nw9-SX-T8p" secondAttribute="trailing" constant="10" id="F2k-f2-O72"/>
                                     <constraint firstItem="nw9-SX-T8p" firstAttribute="leading" secondItem="u43-G0-XqJ" secondAttribute="leading" constant="10" id="Pno-d5-zi1"/>
                                     <constraint firstAttribute="bottom" secondItem="nw9-SX-T8p" secondAttribute="bottom" id="VTk-aQ-vYG"/>

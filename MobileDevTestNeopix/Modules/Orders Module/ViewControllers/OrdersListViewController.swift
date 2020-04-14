@@ -9,6 +9,7 @@ class OrdersListViewController: UIViewController, Storyboarded {
     var viewModelBuilder: OrdersListViewModelBuilder?
     
     private let bag = DisposeBag()
+    let fetchMoreOrdersTrigger = PublishSubject<Void>()
     
     @IBOutlet weak var ordersTableView: UITableView!
     
@@ -27,7 +28,7 @@ private extension OrdersListViewController {
     }
     
     func createViewModel() -> OrdersListViewModel? {
-        return viewModelBuilder?(loadTrigger)
+        return viewModelBuilder?(loadTrigger, fetchMoreOrdersTrigger)
     }
     
     func bindViewModel(_ viewModel: OrdersListViewModel) {
@@ -37,9 +38,33 @@ private extension OrdersListViewController {
                 print("Logo\($0)")
             })
             .disposed(by: bag)
+        
+        viewModel.orders
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {
+                print("priv")
+                print($0.count)
+            })
+            .disposed(by: bag)
+        
+        viewModel.errors
+        .observeOn(MainScheduler.instance)
+        .subscribe(onNext: {
+            print("priv")
+            print($0)
+        })
+        .disposed(by: bag)
+        
+//        viewModel.moreOrders
+//        .observeOn(MainScheduler.instance)
+//        .subscribe(onNext: {
+//            print("More")
+//            print($0.count)
+//        })
+//        .disposed(by: bag)
     }
     
     func setupDataSource(withData data: Observable<[Order]>) {
-        _ = OrdersListDataSource(withTableView: ordersTableView, orders: data)
+        _ = OrdersListDataSource(withTableView: ordersTableView, orders: data, fetchMoreOrdersTrigger: fetchMoreOrdersTrigger)
     }
 }

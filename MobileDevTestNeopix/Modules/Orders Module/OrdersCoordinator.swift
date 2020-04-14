@@ -15,8 +15,10 @@ final class OrdersCoordinator: Coordinator {
     func start() {
         let vc = OrdersListViewController.instantiate()
         vc.coordinator = self
-        vc.viewModelBuilder = { loadTrigger in
-            OrdersListViewModel(loadTrigger: loadTrigger, service: self.container.service)
+        vc.viewModelBuilder = { loadTrigger, fetchMoreOrdersTrigger in
+            OrdersListViewModel(loadTrigger: loadTrigger,
+                                fetchMoreOrdersTrigger: fetchMoreOrdersTrigger,
+                                service: self.container.service)
         }
         navigationController.pushViewController(vc, animated: true)
     }

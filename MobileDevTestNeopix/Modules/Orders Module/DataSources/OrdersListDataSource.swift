@@ -5,10 +5,13 @@ class OrdersListDataSource: NSObject {
     private var data: [Order] = []
     private let tableView: UITableView
     private let bag = DisposeBag()
+    private let fetchMoreOrdersSubject: PublishSubject<Void>
     
     init(withTableView tableView: UITableView,
-         orders: Observable<[Order]>) {
+         orders: Observable<[Order]>,
+         fetchMoreOrdersTrigger: PublishSubject<Void>) {
         self.tableView = tableView
+        self.fetchMoreOrdersSubject = fetchMoreOrdersTrigger
         super.init()
         setupTableView()
         setupUpdate(withData: orders)
@@ -56,6 +59,10 @@ extension OrdersListDataSource: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.identifier, for: indexPath) as! OrderTableViewCell
         cell.setup(withOrder: order)
+        
+        if indexPath.row == data.count - 1 {
+            self.fetchMoreOrdersSubject.onNext(())
+        }
         
         return cell
     }

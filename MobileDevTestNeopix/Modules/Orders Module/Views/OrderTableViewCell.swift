@@ -25,7 +25,7 @@ class OrderTableViewCell: UITableViewCell {
         if let amount = order.amount {
             self.amountLabel.text = amount.amountWithCurrencySymbol
         }
-        logoImageView.downloaded(fromUrl: order.venue.logoUrl)
+        logoImageView.cacheableImage(fromUrl: order.venue.logoUrl)
         
         setupViewsForOrderStatus(status: order.orderStatus)
     }
