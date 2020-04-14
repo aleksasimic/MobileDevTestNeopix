@@ -96,8 +96,8 @@
 		B46A910224432F6600933856 /* OrdersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A910124432F6600933856 /* OrdersListViewModel.swift */; };
 		B4A5C18D2445DF100019E534 /* MonthAndYearData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5C18C2445DF100019E534 /* MonthAndYearData.swift */; };
 		B4A5C18F2445FDB60019E534 /* OrdersSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5C18E2445FDB60019E534 /* OrdersSection.swift */; };
-		B4A5C19124460C0C0019E534 /* OrderTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5C19024460C0C0019E534 /* OrderTableViewHeader.swift */; };
-		B4A5C19524460FA90019E534 /* OrderTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4A5C19424460FA90019E534 /* OrderTableViewHeader.xib */; };
+		B4A5C19124460C0C0019E534 /* OrderTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5C19024460C0C0019E534 /* OrderTableViewSectionHeader.swift */; };
+		B4A5C19524460FA90019E534 /* OrderTableViewSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4A5C19424460FA90019E534 /* OrderTableViewSectionHeader.xib */; };
 		C681E6321D1426E453DC9CB8 /* Pods_MobileDevTestNeopix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D047797360D5EFC2B8E1C30 /* Pods_MobileDevTestNeopix.framework */; };
 /* End PBXBuildFile section */
 
@@ -219,8 +219,8 @@
 		B46A910124432F6600933856 /* OrdersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListViewModel.swift; sourceTree = "<group>"; };
 		B4A5C18C2445DF100019E534 /* MonthAndYearData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthAndYearData.swift; sourceTree = "<group>"; };
 		B4A5C18E2445FDB60019E534 /* OrdersSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersSection.swift; sourceTree = "<group>"; };
-		B4A5C19024460C0C0019E534 /* OrderTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewHeader.swift; sourceTree = "<group>"; };
-		B4A5C19424460FA90019E534 /* OrderTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewHeader.xib; sourceTree = "<group>"; };
+		B4A5C19024460C0C0019E534 /* OrderTableViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewSectionHeader.swift; sourceTree = "<group>"; };
+		B4A5C19424460FA90019E534 /* OrderTableViewSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewSectionHeader.xib; sourceTree = "<group>"; };
 		CEC7CBEDAF38016FFFB94332 /* Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests/Pods-MobileDevTestNeopix-MobileDevTestNeopixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E9327BE78C945919E6CD0051 /* Pods-MobileDevTestNeopixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileDevTestNeopixTests.release.xcconfig"; path = "Target Support Files/Pods-MobileDevTestNeopixTests/Pods-MobileDevTestNeopixTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,9 +269,8 @@
 		B44E531C24446E0200B74005 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B45A72A8244651620085A1B9 /* OrderTableViewSectionHeader */,
 				B44E531D24446E1B00B74005 /* OrderTableViewCell.swift */,
-				B4A5C19024460C0C0019E534 /* OrderTableViewHeader.swift */,
-				B4A5C19424460FA90019E534 /* OrderTableViewHeader.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -535,6 +534,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B45A72A8244651620085A1B9 /* OrderTableViewSectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				B4A5C19024460C0C0019E534 /* OrderTableViewSectionHeader.swift */,
+				B4A5C19424460FA90019E534 /* OrderTableViewSectionHeader.xib */,
+			);
+			path = OrderTableViewSectionHeader;
+			sourceTree = "<group>";
+		};
 		B46A90EE24430EE500933856 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
@@ -689,7 +697,7 @@
 				B452E669244205AD00B0DD6F /* Metropolis-ExtraLightItalic.otf in Resources */,
 				B452E65F244205AD00B0DD6F /* Rubik-MediumItalic.ttf in Resources */,
 				B452E665244205AD00B0DD6F /* Roboto-MediumItalic.ttf in Resources */,
-				B4A5C19524460FA90019E534 /* OrderTableViewHeader.xib in Resources */,
+				B4A5C19524460FA90019E534 /* OrderTableViewSectionHeader.xib in Resources */,
 				B452E668244205AD00B0DD6F /* Rubik-BlackItalic.ttf in Resources */,
 				B452E67F244205AD00B0DD6F /* Metropolis-ExtraBold.otf in Resources */,
 				B452E66D244205AD00B0DD6F /* Roboto-Black.ttf in Resources */,
@@ -876,7 +884,7 @@
 				B46A90F024430F0B00933856 /* DistributorDecoder.swift in Sources */,
 				B452E5EC2441BC8200B0DD6F /* AppDelegate.swift in Sources */,
 				B452E68B24420B6E00B0DD6F /* HttpClient.swift in Sources */,
-				B4A5C19124460C0C0019E534 /* OrderTableViewHeader.swift in Sources */,
+				B4A5C19124460C0C0019E534 /* OrderTableViewSectionHeader.swift in Sources */,
 				B452E62B2441FEBD00B0DD6F /* OrdersCoordinator.swift in Sources */,
 				B452E6902442147300B0DD6F /* URL+Utilities.swift in Sources */,
 				B44E5321244473DD00B74005 /* GradientView.swift in Sources */,

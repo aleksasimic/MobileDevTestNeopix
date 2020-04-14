@@ -5,7 +5,6 @@ typealias OrdersListViewModelBuilder = (_ loadTrigger: Observable<Void>, _ fetch
 
 struct OrdersListViewModel {
     let distributorLogoUrl: Observable<String>
-    let orders: Observable<[Order]>
     let totalAmountString: Observable<String>
     let errors: Observable<Error>
     let ordersWithSections: Observable<[OrdersSection]>
@@ -19,9 +18,9 @@ struct OrdersListViewModel {
         let distributorResults = loadTrigger
             .flatMapLatest {
                 service.getDistributor().materialize()
-        }
-        .retry(3)
-        .share(replay: 3, scope: .whileConnected)
+            }
+            .retry(3)
+            .share(replay: 3, scope: .whileConnected)
         
         distributorLogoUrl = distributorResults.elements()
             .map { $0.logo }
@@ -29,32 +28,32 @@ struct OrdersListViewModel {
         let initalOrderResults = loadTrigger
             .flatMapLatest {
                 service.getOrders(nextId: nil, limit: nil).materialize()
-        }
-        .retry(3)
-        .share(replay: 3, scope: .whileConnected)
+            }
+            .retry(3)
+            .share(replay: 3, scope: .whileConnected)
         
         let initialOrderResultsData = initalOrderResults.elements()
         
         let initialOrders = initialOrderResultsData
             .map {
                 $0.0
-        }
+            }
         
         let fetchMoreOrdersResult = fetchMoreOrdersTrigger
             .withLatestFrom(nextPublisher)
             .filter { $0 != nil }
             .flatMapLatest {
                 service.getOrders(nextId: $0, limit: nil).materialize()
-        }
-        .retry(3)
-        .share(replay: 3, scope: .whileConnected)
+            }
+            .retry(3)
+            .share(replay: 3, scope: .whileConnected)
         
         let fetchMoreOrdersData = fetchMoreOrdersResult.elements()
         
         let moreOrders = fetchMoreOrdersData
             .map {
                 $0.0
-        }
+            }
         
         let combinedNextIds = Observable.of(initialOrderResultsData.map { $0.1.nextId }, fetchMoreOrdersData.map { $0.1.nextId }).merge()
         
@@ -63,27 +62,27 @@ struct OrdersListViewModel {
                 nextPublisher.onNext($0)
             }).subscribe()
         
-        orders = Observable.of(initialOrders, moreOrders).merge()
+        let orders = Observable.of(initialOrders, moreOrders).merge()
             .scan([]) {
                 $0 + $1
-        }
+            }
         
         ordersWithSections = orders.mapToSectionOrders()
         
         let initalOrdersTotalAmount = initialOrderResultsData
             .map {
                 $0.1.totalAmount
-        }
+            }
         
         let moreOrdersTotalAmount = fetchMoreOrdersData
             .map {
                 $0.1.totalAmount
-        }
+            }
         
         totalAmountString = Observable.of(initalOrdersTotalAmount, moreOrdersTotalAmount).merge()
             .map {
                 $0.amountWithCurrencySymbol
-        }
+            }
         
         errors = Observable.of(initalOrderResults.errors(), fetchMoreOrdersResult.errors(), distributorResults.errors()).merge()
     }
@@ -102,22 +101,3 @@ private extension ObservableType where Element == [Order] {
         }
     }
 }
-
-
-
-//OrderSection
-//- monthAndYear
-//- orderList
-//data = [OrderSection]
-//
-//
-//
-//numberOfSections
-//data.count
-//
-//numberOfRowsInSection
-//data[section].orders.count
-//
-//cellForRowat indexPath
-//
-//data[indexPath.section][indexPath.row]

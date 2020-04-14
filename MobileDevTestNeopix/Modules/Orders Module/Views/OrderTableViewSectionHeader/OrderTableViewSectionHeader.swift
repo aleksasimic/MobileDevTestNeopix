@@ -1,6 +1,6 @@
 import Foundation
 import UIKit
 
-class OrderTableViewHeader: UITableViewHeaderFooterView {
+class OrderTableViewSectionHeader: UITableViewHeaderFooterView {
     @IBOutlet weak var monthAndYearLabel: UILabel!
 }

@@ -29,7 +29,7 @@ class OrdersListDataSource: NSObject {
     private func setupTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        let nib = UINib(nibName: "OrderTableViewHeader", bundle: nil)
+        let nib = UINib(nibName: "OrderTableViewSectionHeader", bundle: nil)
         self.tableView.register(nib, forHeaderFooterViewReuseIdentifier: "customSectionHeader")
     }
     
@@ -67,7 +67,7 @@ extension OrdersListDataSource: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: "customSectionHeader") as! OrderTableViewHeader
+        let header = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: "customSectionHeader") as! OrderTableViewSectionHeader
         header.monthAndYearLabel.text = data[section].monthAndYearData.monthAndYearString
         
         return header
@@ -80,6 +80,8 @@ extension OrdersListDataSource: UITableViewDataSource, UITableViewDelegate {
         cell.setup(withOrder: order)
         
         if indexPath.section == data.count - 1 && indexPath.row == data[indexPath.section].orders.count - 1 {
+            print("pre refres")
+            print(data[indexPath.section].orders[data[indexPath.section].orders.count - 1])
             self.fetchMoreOrdersSubject.onNext(())
         }
         

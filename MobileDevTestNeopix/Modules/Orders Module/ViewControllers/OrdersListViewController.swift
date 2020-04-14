@@ -11,6 +11,10 @@ class OrdersListViewController: UIViewController, Storyboarded {
     private let bag = DisposeBag()
     let fetchMoreOrdersTrigger = PublishSubject<Void>()
     
+    @IBOutlet weak var ordersTitleLabel: UILabel!
+    @IBOutlet weak var totalAmountTitleLabel: UILabel!
+    @IBOutlet weak var totalAmountValueLabel: UILabel!
+    @IBOutlet weak var distributorImageView: UIImageView!
     @IBOutlet weak var ordersTableView: UITableView!
     
     override func viewDidLoad() {
@@ -21,6 +25,11 @@ class OrdersListViewController: UIViewController, Storyboarded {
 
 private extension OrdersListViewController {
     func setup() {
+        setupViewModel()
+        setupUI()
+    }
+    
+    func setupViewModel() {
         if let viewModel = createViewModel() {
             bindViewModel(viewModel)
             setupDataSource(withData: viewModel.ordersWithSections)
@@ -32,40 +41,34 @@ private extension OrdersListViewController {
     }
     
     func bindViewModel(_ viewModel: OrdersListViewModel) {
-//        viewModel.distributorLogoUrl
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(onNext: {
-//                print("Logo\($0)")
-//            })
-//            .disposed(by: bag)
-//
-//        viewModel.orders
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(onNext: {
-//                print("priv")
-//                print($0.count)
-//            })
-//            .disposed(by: bag)
+        viewModel.distributorLogoUrl
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.distributorImageView.cacheableImage(fromUrl: $0)
+            })
+            .disposed(by: bag)
         
-        viewModel.ordersWithSections
-        .observeOn(MainScheduler.instance)
-        .subscribe(onNext: {
-            for item in $0 {
-                print(item.monthAndYearData)
-            }
-        })
-        .disposed(by: bag)
-        
-//        viewModel.moreOrders
-//        .observeOn(MainScheduler.instance)
-//        .subscribe(onNext: {
-//            print("More")
-//            print($0.count)
-//        })
-//        .disposed(by: bag)
+        viewModel.totalAmountString
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.totalAmountValueLabel.text = $0
+            })
+            .disposed(by: bag)
     }
     
     func setupDataSource(withData data: Observable<[OrdersSection]>) {
         _ = OrdersListDataSource(withTableView: ordersTableView, orders: data, fetchMoreOrdersTrigger: fetchMoreOrdersTrigger)
     }
+}
+
+private extension OrdersListViewController {
+    func setupUI() {
+        ordersTitleLabel.text = String.OrdersTitle
+        totalAmountValueLabel.text = String.TotalAmountTitle.uppercased()
+    }
+}
+
+private extension String {
+    static let OrdersTitle      = "Orders"
+    static let TotalAmountTitle = "Total Amount For Accepted Orders"
 }
