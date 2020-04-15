@@ -84,6 +84,8 @@
 		B452E68B24420B6E00B0DD6F /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E68A24420B6E00B0DD6F /* HttpClient.swift */; };
 		B452E68D24420F3800B0DD6F /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E68C24420F3800B0DD6F /* ContentType.swift */; };
 		B452E6902442147300B0DD6F /* URL+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B452E68F2442147300B0DD6F /* URL+Utilities.swift */; };
+		B45CE66924472A92002ACB4D /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45CE66824472A92002ACB4D /* OrderDetailsViewController.swift */; };
+		B45CE66B24472AAA002ACB4D /* OrderDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45CE66A24472AAA002ACB4D /* OrderDetailsViewModel.swift */; };
 		B46A90ED24430E7D00933856 /* ResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90EC24430E7D00933856 /* ResponseDecoder.swift */; };
 		B46A90F024430F0B00933856 /* DistributorDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90EF24430F0B00933856 /* DistributorDecoder.swift */; };
 		B46A90F2244311FC00933856 /* OrdersDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90F1244311FC00933856 /* OrdersDecoder.swift */; };
@@ -207,6 +209,8 @@
 		B452E68A24420B6E00B0DD6F /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		B452E68C24420F3800B0DD6F /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		B452E68F2442147300B0DD6F /* URL+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Utilities.swift"; sourceTree = "<group>"; };
+		B45CE66824472A92002ACB4D /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		B45CE66A24472AAA002ACB4D /* OrderDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewModel.swift; sourceTree = "<group>"; };
 		B46A90EC24430E7D00933856 /* ResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecoder.swift; sourceTree = "<group>"; };
 		B46A90EF24430F0B00933856 /* DistributorDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorDecoder.swift; sourceTree = "<group>"; };
 		B46A90F1244311FC00933856 /* OrdersDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersDecoder.swift; sourceTree = "<group>"; };
@@ -393,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				B46A90FD24432D5500933856 /* OrdersListViewController.swift */,
+				B45CE66824472A92002ACB4D /* OrderDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -447,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				B46A910124432F6600933856 /* OrdersListViewModel.swift */,
+				B45CE66A24472AAA002ACB4D /* OrderDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -873,6 +879,7 @@
 				B452E6272441FE2700B0DD6F /* Coordinator.swift in Sources */,
 				B46A910024432EA300933856 /* UIViewController+Rx.swift in Sources */,
 				B44E531B24446BE000B74005 /* OrdersListDataSource.swift in Sources */,
+				B45CE66B24472AAA002ACB4D /* OrderDetailsViewModel.swift in Sources */,
 				B452E689244209A400B0DD6F /* Response.swift in Sources */,
 				B46A910224432F6600933856 /* OrdersListViewModel.swift in Sources */,
 				B4A5C18F2445FDB60019E534 /* OrdersSection.swift in Sources */,
@@ -887,6 +894,7 @@
 				B4A5C19124460C0C0019E534 /* OrderTableViewSectionHeader.swift in Sources */,
 				B452E62B2441FEBD00B0DD6F /* OrdersCoordinator.swift in Sources */,
 				B452E6902442147300B0DD6F /* URL+Utilities.swift in Sources */,
+				B45CE66924472A92002ACB4D /* OrderDetailsViewController.swift in Sources */,
 				B44E5321244473DD00B74005 /* GradientView.swift in Sources */,
 				B45188C3244247AF0050102E /* OrderStatus.swift in Sources */,
 				B46A90F724431A4B00933856 /* OrdersNetworkService.swift in Sources */,

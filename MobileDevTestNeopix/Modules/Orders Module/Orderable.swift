@@ -1,3 +1,4 @@
 protocol Orderable {
-    func showOrderDetails()
+    func showOrderDetails(withOrderId id: Int)
+    func closeOrderDetails()
 }

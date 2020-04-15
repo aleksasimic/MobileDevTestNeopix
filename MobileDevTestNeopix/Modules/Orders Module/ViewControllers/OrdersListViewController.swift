@@ -7,6 +7,7 @@ class OrdersListViewController: UIViewController, Storyboarded {
     
     var coordinator: Orderable?
     var viewModelBuilder: OrdersListViewModelBuilder?
+    var dataSource: OrdersListDataSource!
     
     private let bag = DisposeBag()
     let fetchMoreOrdersTrigger = PublishSubject<Void>()
@@ -57,7 +58,21 @@ private extension OrdersListViewController {
     }
     
     func setupDataSource(withData data: Observable<[OrdersSection]>) {
-        _ = OrdersListDataSource(withTableView: ordersTableView, orders: data, fetchMoreOrdersTrigger: fetchMoreOrdersTrigger)
+        dataSource = createDataSource(withData: data)
+        bindDataSource(dataSource)
+    }
+    
+    func createDataSource(withData data: Observable<[OrdersSection]>) -> OrdersListDataSource {
+        return OrdersListDataSource(withTableView: ordersTableView, orders: data, fetchMoreOrdersTrigger: fetchMoreOrdersTrigger)
+    }
+    
+    func bindDataSource(_ dataSource: OrdersListDataSource) {
+        dataSource.selected
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext:{ [weak self] in
+                self?.coordinator?.showOrderDetails(withOrderId: $0)
+            })
+            .disposed(by: bag)
     }
 }
 

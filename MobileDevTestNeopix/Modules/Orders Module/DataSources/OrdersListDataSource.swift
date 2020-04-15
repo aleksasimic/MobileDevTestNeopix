@@ -2,6 +2,7 @@ import Foundation
 import RxSwift
 
 class OrdersListDataSource: NSObject {
+    var selected: Observable<Int>!
     private var data: [OrdersSection] = []
     private let tableView: UITableView
     private let bag = DisposeBag()
@@ -15,6 +16,7 @@ class OrdersListDataSource: NSObject {
         super.init()
         setupTableView()
         setupUpdate(withData: orders)
+        bindSelection()
     }
     
     private func setupUpdate(withData data: Observable<[OrdersSection]>) {
@@ -43,6 +45,23 @@ class OrdersListDataSource: NSObject {
             self.tableView.reloadData()
         }
     }
+    
+    private func bindSelection() {
+        selected = tableView.rx.itemSelected.asObservable()
+            .do(onNext: { indexPath in
+                self.tableView.deselectRow(at: indexPath, animated: true)
+            })
+            .map { [weak self] in
+                self?.getItem(atIndexPath: $0)
+            }
+            .filter {
+                $0 != nil
+            }
+            .map {
+                $0!.id
+            }
+            .share(replay: 1, scope: .whileConnected)
+    }
 }
 
 extension OrdersListDataSource {
@@ -62,7 +81,7 @@ extension OrdersListDataSource: UITableViewDataSource, UITableViewDelegate {
         data[section].orders.count
     }
     
-   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 32
     }
     
@@ -93,7 +112,7 @@ extension OrdersListDataSource: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let sectionHeaderHeight: CGFloat = 32
         if scrollView.contentOffset.y <= sectionHeaderHeight &&
-           scrollView.contentOffset.y >= 0 {
+            scrollView.contentOffset.y >= 0 {
             scrollView.contentInset = UIEdgeInsets(top: -scrollView.contentOffset.y, left: 0, bottom: 0, right: 0)
         } else if scrollView.contentOffset.y >= sectionHeaderHeight {
             scrollView.contentInset = UIEdgeInsets(top: -sectionHeaderHeight, left: 0, bottom: 0, right: 0)

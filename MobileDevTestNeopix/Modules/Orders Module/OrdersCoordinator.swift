@@ -4,7 +4,7 @@ final class OrdersCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
-
+    
     var container: OrdersContainer
     
     public init(withNavigationController navigationController: UINavigationController, container: OrdersContainer) {
@@ -25,7 +25,21 @@ final class OrdersCoordinator: Coordinator {
 }
 
 extension OrdersCoordinator: Orderable {
-    func showOrderDetails() {
-        //NOTE: TO BE IMPLEMENTED
+    func showOrderDetails(withOrderId id: Int) {
+        let vc = OrderDetailsViewController.instantiate()
+        vc.coordinator = self
+        vc.viewModelBuilder = { loadTrigger in
+            OrderDetailsViewModel(loadTrigger: loadTrigger,
+                                  orderId: id,
+                                  service: self.container.service)
+        }
+        vc.modalPresentationStyle = .overFullScreen
+        navigationController.present(vc, animated: true, completion: nil)
+    }
+    
+    func closeOrderDetails() {
+        if let presentedViewController = navigationController.presentedViewController {
+            presentedViewController.dismiss(animated: true, completion: nil)
+        }
     }
 }

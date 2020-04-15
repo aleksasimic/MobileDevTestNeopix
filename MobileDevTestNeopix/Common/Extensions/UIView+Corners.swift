@@ -30,4 +30,9 @@ import UIKit
             return UIColor(cgColor: color)
         }
     }
+    
+    func setRoundedCorners() {
+         self.layer.cornerRadius = self.frame.width / 2;
+         self.layer.masksToBounds = true;
+     }
 }
