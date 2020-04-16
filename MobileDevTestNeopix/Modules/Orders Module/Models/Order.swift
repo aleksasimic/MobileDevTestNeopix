@@ -10,7 +10,8 @@ public struct Order {
     let amount: Money?
     let totalAmount: Money?
     let venue: Venue
-    let productList: [Product]?
+    let productList: [Product]
+    let notesList: [Note]
     
     let monthAndYear: MonthAndYearData
 }
@@ -45,7 +46,8 @@ extension Order: Decodable {
         totalAmount = Money(amount: totalAmountNumber)
         
         venue = try container.decode(Venue.self, forKey: .venue)
-        productList = try container.decodeIfPresent([Product].self, forKey: .productList)
+        productList = try container.decodeIfPresent([Product].self, forKey: .productList) ?? []
+        notesList = try container.decodeIfPresent([Note].self, forKey: .notes) ?? []
     }
     
     private enum CodingKeys: String, CodingKey {
@@ -59,5 +61,6 @@ extension Order: Decodable {
         case totalAmount
         case venue
         case productList = "orderedProducts"
+        case notes
     }
 }

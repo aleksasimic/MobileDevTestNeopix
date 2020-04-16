@@ -19,6 +19,9 @@
 		B44E532C2444B38F00B74005 /* UIImageView+Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E532B2444B38F00B74005 /* UIImageView+Cacheable.swift */; };
 		B44E532E2444D57200B74005 /* OrderStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E532D2444D57200B74005 /* OrderStatusLabel.swift */; };
 		B44F1E55244865A800D1FA88 /* TabIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F1E54244865A800D1FA88 /* TabIndicatorView.swift */; };
+		B44F1E57244878C800D1FA88 /* OrderDetailsProductsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F1E56244878C800D1FA88 /* OrderDetailsProductsDatasource.swift */; };
+		B44F1E592448791200D1FA88 /* OrderDetailsNotesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F1E582448791200D1FA88 /* OrderDetailsNotesDataSource.swift */; };
+		B44F1E5B2448A7E100D1FA88 /* UITableView+Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F1E5A2448A7E100D1FA88 /* UITableView+Utilites.swift */; };
 		B45188BF244244860050102E /* Distributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188BE244244860050102E /* Distributor.swift */; };
 		B45188C1244247490050102E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188C0244247490050102E /* Order.swift */; };
 		B45188C3244247AF0050102E /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45188C2244247AF0050102E /* OrderStatus.swift */; };
@@ -141,6 +144,9 @@
 		B44E532B2444B38F00B74005 /* UIImageView+Cacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cacheable.swift"; sourceTree = "<group>"; };
 		B44E532D2444D57200B74005 /* OrderStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusLabel.swift; sourceTree = "<group>"; };
 		B44F1E54244865A800D1FA88 /* TabIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabIndicatorView.swift; sourceTree = "<group>"; };
+		B44F1E56244878C800D1FA88 /* OrderDetailsProductsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsProductsDatasource.swift; sourceTree = "<group>"; };
+		B44F1E582448791200D1FA88 /* OrderDetailsNotesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsNotesDataSource.swift; sourceTree = "<group>"; };
+		B44F1E5A2448A7E100D1FA88 /* UITableView+Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Utilites.swift"; sourceTree = "<group>"; };
 		B45188BE244244860050102E /* Distributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distributor.swift; sourceTree = "<group>"; };
 		B45188C0244247490050102E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B45188C2244247AF0050102E /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
@@ -281,8 +287,8 @@
 			children = (
 				B45A72A8244651620085A1B9 /* OrderTableViewSectionHeader */,
 				B44E531D24446E1B00B74005 /* OrderTableViewCell.swift */,
-				B489A41A2447E997000460DA /* NoteTableViewCell.swift */,
 				B489A41C2447EA9E000460DA /* ProductTableViewCell.swift */,
+				B489A41A2447E997000460DA /* NoteTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -471,6 +477,8 @@
 			isa = PBXGroup;
 			children = (
 				B44E531A24446BE000B74005 /* OrdersListDataSource.swift */,
+				B44F1E56244878C800D1FA88 /* OrderDetailsProductsDatasource.swift */,
+				B44F1E582448791200D1FA88 /* OrderDetailsNotesDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -545,6 +553,7 @@
 				B44E53242444881E00B74005 /* UIColor+Additions.swift */,
 				B44E53262444925A00B74005 /* NumberFormatter+Utilites.swift */,
 				B44E532B2444B38F00B74005 /* UIImageView+Cacheable.swift */,
+				B44F1E5A2448A7E100D1FA88 /* UITableView+Utilites.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -880,6 +889,7 @@
 				B44E5323244479BA00B74005 /* UIView+Corners.swift in Sources */,
 				B45188BF244244860050102E /* Distributor.swift in Sources */,
 				B46A90FC2443299F00933856 /* WebConstants.swift in Sources */,
+				B44F1E57244878C800D1FA88 /* OrderDetailsProductsDatasource.swift in Sources */,
 				B45188CB24424F9C0050102E /* DateFormatter+Utilites.swift in Sources */,
 				B452E6232441FDC100B0DD6F /* HttpMethod.swift in Sources */,
 				B452E62D2441FEEA00B0DD6F /* Orderable.swift in Sources */,
@@ -891,6 +901,7 @@
 				B44E531B24446BE000B74005 /* OrdersListDataSource.swift in Sources */,
 				B45CE66B24472AAA002ACB4D /* OrderDetailsViewModel.swift in Sources */,
 				B452E689244209A400B0DD6F /* Response.swift in Sources */,
+				B44F1E592448791200D1FA88 /* OrderDetailsNotesDataSource.swift in Sources */,
 				B46A910224432F6600933856 /* OrdersListViewModel.swift in Sources */,
 				B4A5C18F2445FDB60019E534 /* OrdersSection.swift in Sources */,
 				B452E68D24420F3800B0DD6F /* ContentType.swift in Sources */,
@@ -915,6 +926,7 @@
 				B489A41B2447E997000460DA /* NoteTableViewCell.swift in Sources */,
 				B44E531E24446E1B00B74005 /* OrderTableViewCell.swift in Sources */,
 				B489A41D2447EA9E000460DA /* ProductTableViewCell.swift in Sources */,
+				B44F1E5B2448A7E100D1FA88 /* UITableView+Utilites.swift in Sources */,
 				B452E5EE2441BC8200B0DD6F /* SceneDelegate.swift in Sources */,
 				B44E532A244493A500B74005 /* Money.swift in Sources */,
 				B44E53272444925A00B74005 /* NumberFormatter+Utilites.swift in Sources */,

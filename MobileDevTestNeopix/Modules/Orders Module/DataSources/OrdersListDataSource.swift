@@ -99,8 +99,6 @@ extension OrdersListDataSource: UITableViewDataSource, UITableViewDelegate {
         cell.setup(withOrder: order)
         
         if indexPath.section == data.count - 1 && indexPath.row == data[indexPath.section].orders.count - 1 {
-            print("pre refres")
-            print(data[indexPath.section].orders[data[indexPath.section].orders.count - 1])
             self.fetchMoreOrdersSubject.onNext(())
         }
         

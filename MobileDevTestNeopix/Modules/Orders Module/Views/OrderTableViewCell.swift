@@ -26,6 +26,7 @@ class OrderTableViewCell: UITableViewCell {
             self.amountLabel.text = amount.amountWithCurrencySymbol
         }
         logoImageView.cacheableImage(fromUrl: order.venue.logoUrl)
+        logoImageView.setRoundedCorners()
         orderStatusLabel.setupViewsForOrderStatus(status: order.orderStatus)
     }
 }

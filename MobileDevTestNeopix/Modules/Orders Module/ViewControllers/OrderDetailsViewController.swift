@@ -52,6 +52,11 @@ class OrderDetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var noNotesDescription: UILabel!
     
     
+    @IBOutlet weak var totalAmountLabelBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var notesTableViewTopConstraint: NSLayoutConstraint!
+    
+    var currentPage = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -63,11 +68,16 @@ private extension OrderDetailsViewController {
         setupUI()
         setupViewModel()
         bindActions()
+        bindScrollView()
     }
     
     func setupViewModel() {
         if let viewModel = createViewModel() {
             bindViewModel(viewModel)
+            setupNotesDataSource(withData: viewModel.notes,
+                                 distributorName: viewModel.distributorName,
+                                 distributorLogo: viewModel.distributorLogoUrl)
+            setupProductsDataSource(withData: viewModel.products)
         }
     }
     
@@ -76,13 +86,6 @@ private extension OrderDetailsViewController {
     }
     
     func bindViewModel(_ viewModel: OrderDetailsViewModel) {
-        viewModel.order
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: {
-                print($0)
-            })
-            .disposed(by: bag)
-        
         viewModel.venueName
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
@@ -136,12 +139,33 @@ private extension OrderDetailsViewController {
         viewModel.hideAcceptButton
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
-                self?.acceptButtonView.isHidden = $0
+                self?.setupHideAcceptOrderButton(shouldHide: $0)
+            })
+            .disposed(by: bag)
+        
+        viewModel.hideEmptyNotesView
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.setupNotesView(shouldHide: $0)
             })
             .disposed(by: bag)
     }
     
     func bindActions() {
+        productsTabButton.rx.tap.asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.setupViewForSelectedTabOnScroll(currentPage: 0, shouldScrollToPage: true)
+            })
+            .disposed(by: bag)
+        
+        notesTabButton.rx.tap.asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.setupViewForSelectedTabOnScroll(currentPage: 1, shouldScrollToPage: true)
+            })
+            .disposed(by: bag)
+        
         closeButton.rx.tap.asObservable()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
@@ -156,6 +180,17 @@ private extension OrderDetailsViewController {
             })
             .disposed(by: bag)
     }
+    
+    func setupNotesDataSource(withData data: Observable<[Note]>, distributorName: Observable<String>, distributorLogo: Observable<String>) {
+        _ = OrderDetailsNotesDataSource(withTableView: notesTableView,
+                                        notes: data,
+                                        distributorLogoUrl: distributorLogo,
+                                        distributorName: distributorName)
+    }
+    
+    func setupProductsDataSource(withData data: Observable<[Product]>) {
+        _ = OrderDetailsProductsDataSource(withTableView: productsTableView, products: data)
+    }
 }
 
 private extension OrderDetailsViewController {
@@ -164,6 +199,77 @@ private extension OrderDetailsViewController {
         productsTabIndicatorView.setupIndicatorColor(forStatus: status)
         notesTabIndicatorView.setupIndicatorColor(forStatus: status)
         acceptedOnTitleLabel.text = status == .declined ? String.DeclinedAt : String.AcceptedAt
+    }
+    
+    func setupNotesView(shouldHide: Bool) {
+        self.noNotesView.isHidden = shouldHide
+        self.notesTableView.isHidden = !shouldHide
+        notesTableViewTopConstraint.priority = shouldHide ? UILayoutPriority(999.0) : UILayoutPriority.defaultLow
+    }
+    
+    func setupHideAcceptOrderButton(shouldHide: Bool) {
+        acceptButtonView.isHidden = shouldHide
+        totalAmountLabelBottomConstraint.priority = shouldHide ? UILayoutPriority(999.0) : UILayoutPriority.defaultLow
+        totalAmountLabelBottomConstraint.isActive = true
+    }
+    
+    func setupViewForSelectedTabOnScroll(currentPage: Int, shouldScrollToPage: Bool = false) {
+        if self.currentPage != currentPage {
+            if currentPage == 0 {
+                setupProductsPageOne()
+            } else if currentPage == 1 {
+                setupNotesPageTwo()
+            }
+            
+            if shouldScrollToPage {
+                self.scrollToPage(currentPage: currentPage)
+            }
+            
+            self.currentPage = currentPage
+        }
+    }
+    
+    func setupProductsPageOne() {
+        productsTabIndicatorView.isHidden = false
+        notesTabIndicatorView.isHidden = true
+        productsTabLabel.textColor = UIColor.white
+        notesTabLabel.textColor = UIColor.white.withAlphaComponent(0.48)
+    }
+    
+    func setupNotesPageTwo() {
+        productsTabIndicatorView.isHidden = true
+        notesTabIndicatorView.isHidden = false
+        productsTabLabel.textColor = UIColor.white.withAlphaComponent(0.48)
+        notesTabLabel.textColor = UIColor.white
+    }
+    
+    func scrollToPage(currentPage: Int) {
+        if currentPage == 0 {
+            self.horizontalScrollView.contentOffset.x = 0
+        } else if currentPage == 1 {
+            self.horizontalScrollView.contentOffset.x = view.frame.width
+        }
+        UIView.animate(withDuration: 1.0) {
+            self.view.layoutIfNeeded()
+        }
+    }
+}
+
+extension OrderDetailsViewController: UIScrollViewDelegate {
+    func bindScrollView() {
+        horizontalScrollView.delegate = self
+        bindScrollViewActions()
+    }
+    
+    func bindScrollViewActions() {
+        horizontalScrollView.rx.didEndDecelerating
+            .asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+               let currentPage = (self?.horizontalScrollView.contentOffset.x ?? 0)/(self?.view.frame.width ?? 1)
+                self?.setupViewForSelectedTabOnScroll(currentPage: Int(currentPage))
+            })
+            .disposed(by: bag)
     }
 }
 
@@ -182,12 +288,20 @@ private extension OrderDetailsViewController {
     }
 }
 
+//extension OrderDetailsViewController: UIScrollViewDelegate {
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        print("USO")
+//        print(self.horizontalScrollView.contentOffset.x)
+//        print(self.horizontalScrollView.contentOffset.x/view.frame.width)
+//    }
+//}
+
 private extension String {
     static let OrderNumber = "Order number".uppercased()
     static let OrderedAt   = "Ordered at".uppercased()
     static let AcceptedAt  = "Accepted at".uppercased()
     static let DeclinedAt  = "Declined at".uppercased()
-    static let TotalAmount = "Total amount"
+    static let TotalAmount = "Total Amount:"
     static let AcceptOrder = "Accept order".uppercased()
     static let NA          =  "N/A"
 }

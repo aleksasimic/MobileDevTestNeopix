@@ -4,7 +4,9 @@ import RxSwiftExt
 typealias OrderDetailsViewModelBuilder = (_ loadTrigger: Observable<Void>) -> OrderDetailsViewModel
 
 struct OrderDetailsViewModel {
-    let order: Observable<Order>
+    let distributorName: Observable<String>
+    let distributorLogoUrl: Observable<String>
+    
     let venueName: Observable<String>
     let venueImageUrl: Observable<String>
     let orderStatus: Observable<OrderStatus>
@@ -14,7 +16,17 @@ struct OrderDetailsViewModel {
     let totalAmount: Observable<Money>
     let hideAcceptButton: Observable<Bool>
     
-    init(loadTrigger: Observable<Void>, orderId: Int, service: OrdersNetworkServiceProtocol) {
+    let products: Observable<[Product]>
+    let notes: Observable<[Note]>
+    let hideEmptyNotesView: Observable<Bool>
+    
+    init(loadTrigger: Observable<Void>,
+         orderId: Int, distributorName: String, distributorLogoUrl: String,
+         service: OrdersNetworkServiceProtocol) {
+        
+        self.distributorName = Observable.just(distributorName)
+        
+        self.distributorLogoUrl = Observable.just(distributorLogoUrl)
         
         let orderDetailResults = loadTrigger
             .flatMapLatest {
@@ -25,7 +37,7 @@ struct OrderDetailsViewModel {
         
         let orderDetailsData = orderDetailResults.elements()
         
-        order = orderDetailsData
+        let order = orderDetailsData
             .map {
                 $0
             }
@@ -84,6 +96,21 @@ struct OrderDetailsViewModel {
         hideAcceptButton = order
             .map {
                 $0.orderStatus != .pending
+            }
+        
+        products = order
+            .map {
+                $0.productList
+            }
+        
+        notes = order
+            .map {
+                $0.notesList
+            }
+        
+        hideEmptyNotesView = notes
+            .map {
+                $0.count > 0
             }
     }
 }

@@ -33,7 +33,8 @@ private extension OrdersListViewController {
     func setupViewModel() {
         if let viewModel = createViewModel() {
             bindViewModel(viewModel)
-            setupDataSource(withData: viewModel.ordersWithSections)
+            setupDataSource(withData: viewModel.ordersWithSections,
+                            distributorData: viewModel.distributorData)
         }
     }
     
@@ -57,20 +58,25 @@ private extension OrdersListViewController {
             .disposed(by: bag)
     }
     
-    func setupDataSource(withData data: Observable<[OrdersSection]>) {
+    func setupDataSource(withData data: Observable<[OrdersSection]>,
+                         distributorData: Observable<(String, String)>) {
         dataSource = createDataSource(withData: data)
-        bindDataSource(dataSource)
+        bindDataSource(dataSource, distributorData)
     }
     
     func createDataSource(withData data: Observable<[OrdersSection]>) -> OrdersListDataSource {
         return OrdersListDataSource(withTableView: ordersTableView, orders: data, fetchMoreOrdersTrigger: fetchMoreOrdersTrigger)
     }
     
-    func bindDataSource(_ dataSource: OrdersListDataSource) {
-        dataSource.selected
+    func bindDataSource(_ dataSource: OrdersListDataSource,
+                        _ distributorData: Observable<(String, String)>) {
+        Observable
+            .combineLatest(dataSource.selected, distributorData)
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext:{ [weak self] in
-                self?.coordinator?.showOrderDetails(withOrderId: $0)
+            .subscribe(onNext: { [weak self] in
+                self?.coordinator?.showOrderDetails(withOrderId: $0.0,
+                                                    distributorName: $0.1.1,
+                                                    distributorLogoUrl: $0.1.0)
             })
             .disposed(by: bag)
     }

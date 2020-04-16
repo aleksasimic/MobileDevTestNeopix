@@ -5,6 +5,7 @@ typealias OrdersListViewModelBuilder = (_ loadTrigger: Observable<Void>, _ fetch
 
 struct OrdersListViewModel {
     let distributorLogoUrl: Observable<String>
+    let distributorData: Observable<(String, String)>
     let totalAmountString: Observable<String>
     let errors: Observable<Error>
     let ordersWithSections: Observable<[OrdersSection]>
@@ -22,8 +23,19 @@ struct OrdersListViewModel {
             .retry(3)
             .share(replay: 3, scope: .whileConnected)
         
-        distributorLogoUrl = distributorResults.elements()
-            .map { $0.logo }
+        let distributorResultsData = distributorResults.elements()
+        
+        distributorLogoUrl = distributorResultsData
+            .map {
+                $0.logo
+            }
+        
+        let distributorName = distributorResultsData
+            .map {
+                $0.name
+            }
+        
+        distributorData = Observable.combineLatest(distributorLogoUrl, distributorName)
         
         let initalOrderResults = loadTrigger
             .flatMapLatest {

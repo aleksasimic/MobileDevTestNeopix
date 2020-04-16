@@ -16,5 +16,12 @@ class NoteTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    func setup(withNote note: Note, distributorName: String, distributorImageUrl: String) {
+        distributorImage.cacheableImage(fromUrl: distributorImageUrl)
+        distributorNameLabel.text = distributorName
+        noteDescriptionLabel.text = note.noteMessage
+        noteDateLabel.text = note.noteDate.fullDateString
+    }
 
 }

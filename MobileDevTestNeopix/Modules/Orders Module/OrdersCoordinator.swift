@@ -25,12 +25,14 @@ final class OrdersCoordinator: Coordinator {
 }
 
 extension OrdersCoordinator: Orderable {
-    func showOrderDetails(withOrderId id: Int) {
+    func showOrderDetails(withOrderId id: Int, distributorName: String, distributorLogoUrl: String) {
         let vc = OrderDetailsViewController.instantiate()
         vc.coordinator = self
         vc.viewModelBuilder = { loadTrigger in
             OrderDetailsViewModel(loadTrigger: loadTrigger,
                                   orderId: id,
+                                  distributorName: distributorName,
+                                  distributorLogoUrl: distributorLogoUrl,
                                   service: self.container.service)
         }
         vc.modalPresentationStyle = .overFullScreen

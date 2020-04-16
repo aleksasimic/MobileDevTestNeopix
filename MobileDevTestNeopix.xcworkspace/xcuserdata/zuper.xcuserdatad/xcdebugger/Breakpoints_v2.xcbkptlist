@@ -7,32 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7A9C1FF4-841A-44EE-9DCB-495F77074916"
-            shouldBeEnabled = "Yes"
+            uuid = "1C8FDA18-7873-402B-A71B-4206AFC4E5ED"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MobileDevTestNeopix/Modules/Orders Module/ViewControllers/OrderDetailsViewController.swift"
+            filePath = "MobileDevTestNeopix/Modules/Orders Module/Views/ProductTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "OrderDetailsViewController"
-            landmarkType = "3">
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "setup(withProduct:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A73395AD-EB62-4C14-94B5-D7F1FE9D1A98"
+            uuid = "E651FF3D-EF57-4FDA-892C-717B16B0F746"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MobileDevTestNeopix/Modules/Orders Module/ViewControllers/OrdersListViewController.swift"
+            filePath = "MobileDevTestNeopix/Modules/Orders Module/DataSources/OrderDetailsHorizontalScrollDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "bindDataSource(_:)"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "init(withScrollView:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1094BEE-E0F9-40F4-850B-66C0E2F6DC39"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileDevTestNeopix/Modules/Orders Module/DataSources/OrderDetailsHorizontalScrollDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "scrollViewDidEndDecelerating(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

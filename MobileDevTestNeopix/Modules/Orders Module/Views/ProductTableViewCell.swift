@@ -17,5 +17,12 @@ class ProductTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    func setup(withProduct product: Product) {
+        productImage.cacheableImage(fromUrl: product.imageUrl)
+        productNameLabel.text = product.name
+        productQuantityValueLabel.text = "\(product.quantity)"
+        productTotalAmountValueLabel.text = product.totalPrice.amountWithCurrencySymbol
+    }
 
 }
