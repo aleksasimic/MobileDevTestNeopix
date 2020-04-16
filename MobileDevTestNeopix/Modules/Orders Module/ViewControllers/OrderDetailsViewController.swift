@@ -22,6 +22,33 @@ class OrderDetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var acceptedOnTitleLabel: UILabel!
     @IBOutlet weak var acceptedOnValueLabel: UILabel!
     
+    @IBOutlet weak var orderDetailsInfoView: UIView!
+    @IBOutlet weak var tabButtonsView: UIView!
+    
+    @IBOutlet weak var productsTabLabel: UILabel!
+    @IBOutlet weak var notesTabLabel: UILabel!
+    @IBOutlet weak var productsTabIndicator: UIView!
+    @IBOutlet weak var notesTabIndicator: UIView!
+    @IBOutlet weak var productsTabButton: UIButton!
+    @IBOutlet weak var notesTabButton: UIButton!
+    
+    
+    @IBOutlet weak var totalAmountTitleLabel: UILabel!
+    @IBOutlet weak var totalAmountValueLabel: UILabel!
+    @IBOutlet weak var acceptButtonView: GradientView!
+    @IBOutlet weak var acceptButton: UIButton!
+    
+    @IBOutlet weak var horizontalScrollView: UIScrollView!
+    @IBOutlet weak var productsTableView: UITableView!
+    @IBOutlet weak var notesTableView: UITableView!
+    
+    @IBOutlet weak var productHeaderProductName: UILabel!
+    @IBOutlet weak var productHeaderTotalAmount: UILabel!
+    
+    @IBOutlet weak var noNotesTitle: UILabel!
+    @IBOutlet weak var noNotesDescription: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -56,6 +83,13 @@ private extension OrderDetailsViewController {
     
     func bindActions() {
         closeButton.rx.tap.asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.coordinator?.closeOrderDetails()
+            })
+            .disposed(by: bag)
+        
+        acceptButton.rx.tap.asObservable()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
                 self?.coordinator?.closeOrderDetails()

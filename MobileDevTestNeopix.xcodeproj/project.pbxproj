@@ -96,6 +96,8 @@
 		B46A90FE24432D5500933856 /* OrdersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90FD24432D5500933856 /* OrdersListViewController.swift */; };
 		B46A910024432EA300933856 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A90FF24432EA300933856 /* UIViewController+Rx.swift */; };
 		B46A910224432F6600933856 /* OrdersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A910124432F6600933856 /* OrdersListViewModel.swift */; };
+		B489A41B2447E997000460DA /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B489A41A2447E997000460DA /* NoteTableViewCell.swift */; };
+		B489A41D2447EA9E000460DA /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B489A41C2447EA9E000460DA /* ProductTableViewCell.swift */; };
 		B4A5C18D2445DF100019E534 /* MonthAndYearData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5C18C2445DF100019E534 /* MonthAndYearData.swift */; };
 		B4A5C18F2445FDB60019E534 /* OrdersSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5C18E2445FDB60019E534 /* OrdersSection.swift */; };
 		B4A5C19124460C0C0019E534 /* OrderTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5C19024460C0C0019E534 /* OrderTableViewSectionHeader.swift */; };
@@ -221,6 +223,8 @@
 		B46A90FD24432D5500933856 /* OrdersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListViewController.swift; sourceTree = "<group>"; };
 		B46A90FF24432EA300933856 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		B46A910124432F6600933856 /* OrdersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListViewModel.swift; sourceTree = "<group>"; };
+		B489A41A2447E997000460DA /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		B489A41C2447EA9E000460DA /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		B4A5C18C2445DF100019E534 /* MonthAndYearData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthAndYearData.swift; sourceTree = "<group>"; };
 		B4A5C18E2445FDB60019E534 /* OrdersSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersSection.swift; sourceTree = "<group>"; };
 		B4A5C19024460C0C0019E534 /* OrderTableViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewSectionHeader.swift; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 			children = (
 				B45A72A8244651620085A1B9 /* OrderTableViewSectionHeader */,
 				B44E531D24446E1B00B74005 /* OrderTableViewCell.swift */,
+				B489A41A2447E997000460DA /* NoteTableViewCell.swift */,
+				B489A41C2447EA9E000460DA /* ProductTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -902,7 +908,9 @@
 				B44E532E2444D57200B74005 /* UILabel+Utilites.swift in Sources */,
 				B46A90ED24430E7D00933856 /* ResponseDecoder.swift in Sources */,
 				B45188C1244247490050102E /* Order.swift in Sources */,
+				B489A41B2447E997000460DA /* NoteTableViewCell.swift in Sources */,
 				B44E531E24446E1B00B74005 /* OrderTableViewCell.swift in Sources */,
+				B489A41D2447EA9E000460DA /* ProductTableViewCell.swift in Sources */,
 				B452E5EE2441BC8200B0DD6F /* SceneDelegate.swift in Sources */,
 				B44E532A244493A500B74005 /* Money.swift in Sources */,
 				B44E53272444925A00B74005 /* NumberFormatter+Utilites.swift in Sources */,
