@@ -34,7 +34,10 @@ extension OrdersCoordinator: Orderable {
                                   service: self.container.service)
         }
         vc.modalPresentationStyle = .overFullScreen
-        navigationController.present(vc, animated: true, completion: nil)
+        
+        DispatchQueue.main.async {
+            self.navigationController.present(vc, animated: true, completion: nil)
+        }
     }
     
     func closeOrderDetails() {

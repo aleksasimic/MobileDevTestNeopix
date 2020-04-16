@@ -30,4 +30,9 @@ extension Date {
     var monthAndYearString: String {
         return "\(month) \(year)"
     }
+    
+    var fullDateString: String {
+        let formatter = DateFormatter.customDateFormatter
+        return formatter.string(from: self)
+    }
 }

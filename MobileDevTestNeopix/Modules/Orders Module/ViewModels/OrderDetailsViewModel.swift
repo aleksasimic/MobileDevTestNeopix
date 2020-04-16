@@ -5,6 +5,14 @@ typealias OrderDetailsViewModelBuilder = (_ loadTrigger: Observable<Void>) -> Or
 
 struct OrderDetailsViewModel {
     let order: Observable<Order>
+    let venueName: Observable<String>
+    let venueImageUrl: Observable<String>
+    let orderStatus: Observable<OrderStatus>
+    let orderNumber: Observable<String>
+    let orderedAt: Observable<Date>
+    let acceptedOrDeclinedAt: Observable<Date>
+    let totalAmount: Observable<Money>
+    let hideAcceptButton: Observable<Bool>
     
     init(loadTrigger: Observable<Void>, orderId: Int, service: OrdersNetworkServiceProtocol) {
         
@@ -21,5 +29,65 @@ struct OrderDetailsViewModel {
             .map {
                 $0
             }
+        
+        venueName = order
+            .map {
+                $0.venue.name
+            }
+        
+        venueImageUrl = order
+            .map {
+                $0.venue.logoUrl
+            }
+        
+        orderStatus = order
+            .map {
+                $0.orderStatus
+            }
+        
+        orderNumber = order
+            .map {
+                $0.orderNumber
+            }
+        
+        orderedAt = order
+            .map {
+                $0.orderedAt
+            }
+        
+        let acceptedAt = order
+            .filter {
+                $0.acceptedAt != nil
+            }
+            .map {
+                $0.acceptedAt!
+            }
+        
+        let declinedAt = order
+            .filter {
+                $0.declinedAt != nil
+            }
+            .map {
+                $0.declinedAt!
+            }
+        
+        acceptedOrDeclinedAt = Observable.of(acceptedAt, declinedAt).merge()
+        
+        totalAmount = order
+            .filter {
+                $0.totalAmount != nil
+            }
+            .map {
+                $0.totalAmount!
+            }
+        
+        hideAcceptButton = order
+            .map {
+                $0.orderStatus != .pending
+            }
     }
+}
+
+private extension String {
+    static let NA = "N/A"
 }

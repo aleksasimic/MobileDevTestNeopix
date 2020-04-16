@@ -14,7 +14,8 @@ class OrderDetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var venueImageView: UIImageView!
     @IBOutlet weak var venueNameLabel: UILabel!
     @IBOutlet weak var viewVenueInfoButton: UIButton!
-    @IBOutlet weak var orderStatusLabel: PaddingLabel!
+
+    @IBOutlet weak var orderStatusLabel: OrderStatusLabel!
     @IBOutlet weak var orderNumberTitleLabel: UILabel!
     @IBOutlet weak var orderNumberDescriptionLabel: UILabel!
     @IBOutlet weak var requestedOnTitleLabel: UILabel!
@@ -27,8 +28,8 @@ class OrderDetailsViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var productsTabLabel: UILabel!
     @IBOutlet weak var notesTabLabel: UILabel!
-    @IBOutlet weak var productsTabIndicator: UIView!
-    @IBOutlet weak var notesTabIndicator: UIView!
+    @IBOutlet weak var productsTabIndicatorView: TabIndicatorView!
+    @IBOutlet weak var notesTabIndicatorView: TabIndicatorView!
     @IBOutlet weak var productsTabButton: UIButton!
     @IBOutlet weak var notesTabButton: UIButton!
     
@@ -37,6 +38,7 @@ class OrderDetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var totalAmountValueLabel: UILabel!
     @IBOutlet weak var acceptButtonView: GradientView!
     @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var acceptOrderLabel: UILabel!
     
     @IBOutlet weak var horizontalScrollView: UIScrollView!
     @IBOutlet weak var productsTableView: UITableView!
@@ -45,6 +47,7 @@ class OrderDetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var productHeaderProductName: UILabel!
     @IBOutlet weak var productHeaderTotalAmount: UILabel!
     
+    @IBOutlet weak var noNotesView: UIView!
     @IBOutlet weak var noNotesTitle: UILabel!
     @IBOutlet weak var noNotesDescription: UILabel!
     
@@ -79,6 +82,63 @@ private extension OrderDetailsViewController {
                 print($0)
             })
             .disposed(by: bag)
+        
+        viewModel.venueName
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.venueNameLabel.text = $0
+            })
+            .disposed(by: bag)
+        
+        viewModel.venueImageUrl
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.venueImageView.cacheableImage(fromUrl: $0)
+            })
+        
+            .disposed(by: bag)
+        
+        viewModel.orderStatus
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.setupViewsForOrderStatus(status: $0)
+            })
+            .disposed(by: bag)
+        
+        viewModel.orderNumber
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.orderNumberDescriptionLabel.text = $0
+            })
+            .disposed(by: bag)
+        
+        viewModel.orderedAt
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.requestedOnValueLabel.text = $0.fullDateString
+            })
+            .disposed(by: bag)
+        
+        viewModel.acceptedOrDeclinedAt
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.acceptedOnValueLabel.text = $0.fullDateString
+            })
+            .disposed(by: bag)
+        
+        viewModel.totalAmount
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.totalAmountValueLabel.text = $0.amountWithCurrencySymbol
+            })
+            .disposed(by: bag)
+        
+        viewModel.hideAcceptButton
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.acceptButtonView.isHidden = $0
+            })
+            .disposed(by: bag)
     }
     
     func bindActions() {
@@ -99,6 +159,15 @@ private extension OrderDetailsViewController {
 }
 
 private extension OrderDetailsViewController {
+    func setupViewsForOrderStatus(status: OrderStatus) {
+        orderStatusLabel.setupViewsForOrderStatus(status: status)
+        productsTabIndicatorView.setupIndicatorColor(forStatus: status)
+        notesTabIndicatorView.setupIndicatorColor(forStatus: status)
+        acceptedOnTitleLabel.text = status == .declined ? String.DeclinedAt : String.AcceptedAt
+    }
+}
+
+private extension OrderDetailsViewController {
     func setupUI() {
         setupLabels()
         venueImageView.setRoundedCorners()
@@ -107,7 +176,9 @@ private extension OrderDetailsViewController {
     func setupLabels() {
         orderNumberTitleLabel.text = String.OrderNumber
         requestedOnTitleLabel.text = String.OrderedAt
-        acceptedOnTitleLabel.text = String.AcceptedAt
+        totalAmountTitleLabel.text = String.TotalAmount
+        acceptOrderLabel.text = String.AcceptOrder
+        acceptedOnValueLabel.text = String.NA
     }
 }
 
@@ -115,6 +186,9 @@ private extension String {
     static let OrderNumber = "Order number".uppercased()
     static let OrderedAt   = "Ordered at".uppercased()
     static let AcceptedAt  = "Accepted at".uppercased()
-    static let NotAccepted = "N/A"
+    static let DeclinedAt  = "Declined at".uppercased()
+    static let TotalAmount = "Total amount"
+    static let AcceptOrder = "Accept order".uppercased()
+    static let NA          =  "N/A"
 }
 

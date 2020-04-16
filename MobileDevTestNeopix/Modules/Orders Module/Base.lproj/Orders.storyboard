@@ -108,7 +108,7 @@
                                             </constraints>
                                         </view>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" rowHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="8Co-BQ-5qN" customClass="OrderTableViewCell" customModule="MobileDevTestNeopix" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderCell" rowHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="8Co-BQ-5qN" customClass="OrderTableViewCell" customModule="MobileDevTestNeopix" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="108" width="394" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Co-BQ-5qN" id="JIZ-6K-VGY">
@@ -157,8 +157,8 @@
                                                                     <color key="textColor" red="0.1450980392" green="0.14901960780000001" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="PARTIALLY ACCEPTED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0q3-84-poC" customClass="PaddingLabel" customModule="MobileDevTestNeopix" customModuleProvider="target">
-                                                                    <rect key="frame" x="268" y="37" width="114" height="18"/>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="PARTIALLY ACCEPTED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0q3-84-poC" customClass="OrderStatusLabel" customModule="MobileDevTestNeopix" customModuleProvider="target">
+                                                                    <rect key="frame" x="256" y="37" width="126" height="18"/>
                                                                     <color key="backgroundColor" red="0.30196078430000001" green="0.48627450979999998" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" name="Metropolis-Bold" family="Metropolis" pointSize="10"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -233,7 +233,7 @@
                                                 <connections>
                                                     <outlet property="amountLabel" destination="Sp1-w7-j5F" id="4po-LD-JSA"/>
                                                     <outlet property="logoImageView" destination="dg8-wD-41M" id="7Ju-3i-rw6"/>
-                                                    <outlet property="orderStatusLabel" destination="0q3-84-poC" id="Dud-5J-6qW"/>
+                                                    <outlet property="orderStatusLabel" destination="0q3-84-poC" id="nu3-h4-U1J"/>
                                                     <outlet property="orderedDateLabel" destination="PaE-uE-hIf" id="MBV-aE-Ukv"/>
                                                     <outlet property="venueNameLabel" destination="N42-0B-TdL" id="SU7-Pg-MD0"/>
                                                 </connections>
@@ -386,7 +386,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmG-ux-MAF">
                                                 <rect key="frame" x="0.0" y="36" width="414" height="81"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCEPTED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNt-aE-YRi" customClass="PaddingLabel" customModule="MobileDevTestNeopix" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCEPTED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNt-aE-YRi" customClass="OrderStatusLabel" customModule="MobileDevTestNeopix" customModuleProvider="target">
                                                         <rect key="frame" x="173.66666666666666" y="16" width="67" height="16"/>
                                                         <color key="backgroundColor" red="0.23137254900000001" green="0.74117647060000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Metropolis-Bold" family="Metropolis" pointSize="10"/>
@@ -522,14 +522,14 @@
                                                 <color key="textColor" white="1" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zz-Xg-gdL">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zz-Xg-gdL" customClass="TabIndicatorView" customModule="MobileDevTestNeopix" customModuleProvider="target">
                                                 <rect key="frame" x="18" y="177" width="189" height="4"/>
                                                 <color key="backgroundColor" red="0.23137254900000001" green="0.74117647060000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="4" id="z71-rN-uDe"/>
                                                 </constraints>
                                             </view>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTy-Qp-Eat">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTy-Qp-Eat" customClass="TabIndicatorView" customModule="MobileDevTestNeopix" customModuleProvider="target">
                                                 <rect key="frame" x="207" y="177" width="225" height="4"/>
                                                 <color key="backgroundColor" red="0.23137254900000001" green="0.74117647060000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -985,24 +985,26 @@
                     <connections>
                         <outlet property="acceptButton" destination="GhM-mt-IgK" id="PVs-6w-Qxk"/>
                         <outlet property="acceptButtonView" destination="Dtx-wO-ubr" id="sG3-9b-Fdo"/>
+                        <outlet property="acceptOrderLabel" destination="hOc-AN-2wV" id="Bl1-DM-wls"/>
                         <outlet property="acceptedOnTitleLabel" destination="dtC-in-19u" id="rn7-uK-BFd"/>
                         <outlet property="acceptedOnValueLabel" destination="r5c-t3-cY1" id="rV8-yr-r5Y"/>
                         <outlet property="closeButton" destination="BNm-jb-Lfd" id="hmS-Pp-4ml"/>
                         <outlet property="horizontalScrollView" destination="sbB-vN-dX6" id="zzL-G8-1IC"/>
                         <outlet property="noNotesDescription" destination="YXD-DT-fjJ" id="PL0-Dg-Jpc"/>
                         <outlet property="noNotesTitle" destination="7tk-o6-B1L" id="MuZ-hc-PD0"/>
+                        <outlet property="noNotesView" destination="TYS-Gm-5iX" id="gbi-sp-wOH"/>
                         <outlet property="notesTabButton" destination="Pzz-gl-eXv" id="xYI-e9-Oei"/>
-                        <outlet property="notesTabIndicator" destination="LTy-Qp-Eat" id="IwU-2d-HcV"/>
+                        <outlet property="notesTabIndicatorView" destination="LTy-Qp-Eat" id="HcU-li-2pp"/>
                         <outlet property="notesTabLabel" destination="aum-3p-xH0" id="RTF-bg-ScK"/>
                         <outlet property="notesTableView" destination="DE3-Bu-gge" id="Wlp-5m-B1X"/>
                         <outlet property="orderDetailsInfoView" destination="qmG-ux-MAF" id="dqy-9S-bkn"/>
                         <outlet property="orderNumberDescriptionLabel" destination="6M9-n2-b6c" id="tfY-IT-GBT"/>
                         <outlet property="orderNumberTitleLabel" destination="LnM-1t-OGk" id="DUn-VH-sXV"/>
-                        <outlet property="orderStatusLabel" destination="FNt-aE-YRi" id="iQ8-D4-MY0"/>
+                        <outlet property="orderStatusLabel" destination="FNt-aE-YRi" id="r5w-BW-jJQ"/>
                         <outlet property="productHeaderProductName" destination="a3v-X9-m9s" id="a17-KW-vNU"/>
                         <outlet property="productHeaderTotalAmount" destination="2kl-9O-384" id="g1c-Ee-hoK"/>
                         <outlet property="productsTabButton" destination="buE-HB-zL7" id="6sh-2Q-Sj4"/>
-                        <outlet property="productsTabIndicator" destination="3zz-Xg-gdL" id="zGc-9l-Khg"/>
+                        <outlet property="productsTabIndicatorView" destination="3zz-Xg-gdL" id="s9B-fM-IjB"/>
                         <outlet property="productsTabLabel" destination="heJ-ux-ahX" id="3Uq-k0-vHK"/>
                         <outlet property="productsTableView" destination="guN-9L-6rd" id="2NZ-na-bJr"/>
                         <outlet property="requestedOnTitleLabel" destination="pC1-CT-IuW" id="igm-vA-r6T"/>
