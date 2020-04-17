@@ -34,7 +34,7 @@ public final class GradientView: UIView {
 
     public func updateLayer() {
         guard let gradientLayer = self.layer as? CAGradientLayer else {
-            fatalError("Error")
+            return
         }
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         gradientLayer.startPoint = startPoint

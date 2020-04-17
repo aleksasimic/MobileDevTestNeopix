@@ -9,6 +9,8 @@ class OrderDetailsViewController: UIViewController, Storyboarded {
     var viewModelBuilder: OrderDetailsViewModelBuilder?
     
     private let bag = DisposeBag()
+    let topInfoViewUpdateSubject = PublishSubject<(CGFloat, Bool)>()
+    let productTableBottomUpdateSubject = PublishSubject<Bool>()
     
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var venueImageView: UIImageView!
@@ -39,10 +41,10 @@ class OrderDetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var totalAmountValueLabel: UILabel!
     @IBOutlet weak var acceptButtonView: GradientView!
     @IBOutlet weak var acceptButton: UIButton!
-    @IBOutlet weak var acceptOrderLabel: UILabel!
     
     @IBOutlet weak var horizontalScrollView: UIScrollView!
     @IBOutlet weak var productsTableView: UITableView!
+    @IBOutlet weak var productsTableBottomGradientView: GradientView!
     @IBOutlet weak var notesTableView: UITableView!
     
     @IBOutlet weak var productHeaderProductName: UILabel!
@@ -55,6 +57,8 @@ class OrderDetailsViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var totalAmountLabelBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var notesTableViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var orderDetailsInfoViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var productsTableViewBottomConstraint: NSLayoutConstraint!
     
     var currentPage = 0
     
@@ -68,13 +72,13 @@ private extension OrderDetailsViewController {
     func setup() {
         setupUI()
         setupViewModel()
-        bindActions()
         bindScrollView()
     }
     
     func setupViewModel() {
         if let viewModel = createViewModel() {
             bindViewModel(viewModel)
+            bindActions(viewModel)
             setupNotesDataSource(withData: viewModel.notes,
                                  distributorName: viewModel.distributorName,
                                  distributorLogo: viewModel.distributorLogoUrl)
@@ -99,7 +103,7 @@ private extension OrderDetailsViewController {
             .subscribe(onNext: { [weak self] in
                 self?.venueImageView.cacheableImage(fromUrl: $0)
             })
-        
+            
             .disposed(by: bag)
         
         viewModel.orderStatus
@@ -152,7 +156,7 @@ private extension OrderDetailsViewController {
             .disposed(by: bag)
     }
     
-    func bindActions() {
+    func bindActions(_ viewModel: OrderDetailsViewModel) {
         productsTabButton.rx.tap.asObservable()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
@@ -182,9 +186,31 @@ private extension OrderDetailsViewController {
             .disposed(by: bag)
         
         viewVenueInfoButton.rx.tap.asObservable()
+            .withLatestFrom(viewModel.venue)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
-                self?.coordinator?.showVenueInfo()
+                self?.coordinator?.showVenueInfo(forVenue: $0)
+            })
+            .disposed(by: bag)
+        
+        moreButton.rx.tap.asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.coordinator?.showCancelDeclineOrder()
+            })
+            .disposed(by: bag)
+        
+        topInfoViewUpdateSubject.asObservable()
+            .observeOn(MainScheduler.asyncInstance)
+            .subscribe(onNext: { [weak self] in
+                self?.setupOrderDetailsHeightConstraint(offset: $0.0, scrollingDown: $0.1)
+            })
+            .disposed(by: bag)
+        
+        productTableBottomUpdateSubject.asObservable()
+            .observeOn(MainScheduler.asyncInstance)
+            .subscribe(onNext: { [weak self] in
+                self?.setupProductsTableBottomGradientView(shouldPresent: $0)
             })
             .disposed(by: bag)
     }
@@ -197,7 +223,10 @@ private extension OrderDetailsViewController {
     }
     
     func setupProductsDataSource(withData data: Observable<[Product]>) {
-        _ = OrderDetailsProductsDataSource(withTableView: productsTableView, products: data)
+        _ = OrderDetailsProductsDataSource(withTableView: productsTableView,
+                                           products: data,
+                                           topInfoVewPositionUpdateTrigger: topInfoViewUpdateSubject,
+                                           bottomGradientUpdateTrigger: productTableBottomUpdateSubject)
     }
 }
 
@@ -217,6 +246,7 @@ private extension OrderDetailsViewController {
     
     func setupHideAcceptOrderButton(shouldHide: Bool) {
         acceptButtonView.isHidden = shouldHide
+        acceptButton.isHidden = shouldHide
         totalAmountLabelBottomConstraint.priority = shouldHide ? UILayoutPriority(999.0) : UILayoutPriority.defaultLow
         totalAmountLabelBottomConstraint.isActive = true
     }
@@ -261,6 +291,11 @@ private extension OrderDetailsViewController {
             self.view.layoutIfNeeded()
         }
     }
+    
+    func setupProductsTableBottomGradientView(shouldPresent: Bool) {
+        productsTableViewBottomConstraint.constant = shouldPresent ? 72.0 : 0.0
+        productsTableBottomGradientView.isHidden = shouldPresent
+    }
 }
 
 extension OrderDetailsViewController: UIScrollViewDelegate {
@@ -274,26 +309,56 @@ extension OrderDetailsViewController: UIScrollViewDelegate {
             .asObservable()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
-               let currentPage = (self?.horizontalScrollView.contentOffset.x ?? 0)/(self?.view.frame.width ?? 1)
+                let currentPage = (self?.horizontalScrollView.contentOffset.x ?? 0)/(self?.view.frame.width ?? 1)
                 self?.setupViewForSelectedTabOnScroll(currentPage: Int(currentPage))
             })
             .disposed(by: bag)
     }
 }
 
+extension OrderDetailsViewController {
+    func setupOrderDetailsHeightConstraint(offset: CGFloat, scrollingDown: Bool) {
+        if scrollingDown {
+            if orderDetailsInfoViewHeightConstraint.constant >= 0 {
+                if orderDetailsInfoViewHeightConstraint.constant - offset <= 0 {
+                    orderDetailsInfoViewHeightConstraint.constant = 0
+                } else {
+                    orderDetailsInfoViewHeightConstraint.constant -= offset
+                }
+            }
+        } else  {
+            if orderDetailsInfoViewHeightConstraint.constant < 81 {
+                if orderDetailsInfoViewHeightConstraint.constant + offset >= 81 {
+                    orderDetailsInfoViewHeightConstraint.constant = 81
+                } else {
+                    orderDetailsInfoViewHeightConstraint.constant += offset
+                }
+            }
+        }
+    }
+}
+
 private extension OrderDetailsViewController {
     func setupUI() {
         setupLabels()
-        venueImageView.setRoundedCorners()
-        acceptButtonView.layer.applySketchShadow(color: UIColor.acceptOrderShadowColor(), alpha: 1.0, x: 0, y: 8, blur: 16.0, spread: -8.0)
+        setupViews()
     }
     
     func setupLabels() {
         orderNumberTitleLabel.text = String.OrderNumber
         requestedOnTitleLabel.text = String.OrderedAt
         totalAmountTitleLabel.text = String.TotalAmount
-        acceptOrderLabel.text = String.AcceptOrder
+        acceptButton.setTitle(String.AcceptOrder, for: .normal)
         acceptedOnValueLabel.text = String.NA
+    }
+    
+    func setupViews() {
+        venueImageView.setRoundedCorners()
+        acceptButton.layer.applySketchShadow(color: UIColor.acceptOrderShadowColor(),
+                                             alpha: 1.0, x: 0, y: 8, blur: 16, spread: -8)
+        
+        let visible = productsTableView.contentSize.height < productsTableView.frame.height
+        setupProductsTableBottomGradientView(shouldPresent: visible)
     }
 }
 

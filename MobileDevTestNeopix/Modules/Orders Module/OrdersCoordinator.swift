@@ -1,4 +1,5 @@
 import UIKit
+import RxSwift
 
 final class OrdersCoordinator: Coordinator {
     
@@ -49,11 +50,55 @@ extension OrdersCoordinator: Orderable {
     }
     
     
-    func showVenueInfo() {
+    func showVenueInfo(forVenue venue: Venue) {
         let vc = VenueInfoViewController.instantiate()
+        
         vc.modalPresentationStyle = .custom
+        
+        vc.coordinator = self
+        vc.viewModelBuilder = {
+            VenueInfoViewModel(venue: Observable.just(venue))
+        }
+        
         if let presentedViewController = navigationController.presentedViewController {
             presentedViewController.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    func closeVenueInfo() {
+        if let orderDetailsVc = navigationController.presentedViewController {
+            if let venueInfoVc = orderDetailsVc.presentedViewController {
+                venueInfoVc.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func showCancelDeclineOrder() {
+        let vc = DeclineOrderViewController.instantiate()
+        
+        vc.modalPresentationStyle = .custom
+        
+        vc.coordintor = self
+        
+        if let presentedViewController = navigationController.presentedViewController {
+            presentedViewController.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    func cancelDeclineOrder() {
+        if let orderDetailsVc = navigationController.presentedViewController {
+            if let declineOrderVc = orderDetailsVc.presentedViewController {
+                declineOrderVc.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func declineOrder() {
+        if let orderDetailsVc = navigationController.presentedViewController {
+            if let declineOrderVc = orderDetailsVc.presentedViewController {
+                declineOrderVc.dismiss(animated: true, completion: nil)
+            }
+            orderDetailsVc.dismiss(animated: true, completion: nil)
         }
     }
 }

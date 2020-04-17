@@ -31,8 +31,8 @@ class OrdersListViewController: UIViewController, Storyboarded {
 
 private extension OrdersListViewController {
     func setup() {
-        setupViewModel()
         setupUI()
+        setupViewModel()
     }
     
     func setupViewModel() {
@@ -134,7 +134,8 @@ private extension OrdersListViewController {
         
         let buttonItem = UIBarButtonItem(customView: distributorImageView)
         self.navigationItem.rightBarButtonItem = buttonItem
-    NSLayoutConstraint.activate([(self.navigationItem.rightBarButtonItem?.customView!.heightAnchor.constraint(equalToConstant: 32))!,(self.navigationItem.rightBarButtonItem?.customView!.widthAnchor.constraint(equalToConstant: 32))!])
+    NSLayoutConstraint.activate([(self.navigationItem.rightBarButtonItem?.customView!.heightAnchor.constraint(equalToConstant: 32))!,
+                                 (self.navigationItem.rightBarButtonItem?.customView!.widthAnchor.constraint(equalToConstant: 32))!])
     }
 }
 

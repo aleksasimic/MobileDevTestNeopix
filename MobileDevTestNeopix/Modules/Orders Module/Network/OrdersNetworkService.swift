@@ -31,7 +31,7 @@ struct OrdersNetworkService: OrdersNetworkServiceProtocol {
     
     func getOrders(nextId: Int? = nil, limit: Int? = nil) -> Observable<([Order], PaginationMeta)> {
         var queryParameters: [String: String] = [:]
-        
+      
         if let id = nextId {
             queryParameters[Parameters.NextId] = "\(id)"
         }

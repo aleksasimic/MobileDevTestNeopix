@@ -7,8 +7,9 @@ struct OrdersListViewModel {
     let distributorLogoUrl: Observable<String>
     let distributorData: Observable<(String, String)>
     let totalAmountString: Observable<String>
-    let errors: Observable<Error>
     let ordersWithSections: Observable<[OrdersSection]>
+    
+    let error: Observable<Error>
     
     let nextIdPublisher = PublishSubject<Int?>()
     
@@ -67,7 +68,8 @@ struct OrdersListViewModel {
                 $0.0
             }
         
-        let combinedNextIds = Observable.of(initialOrderResultsData.map { $0.1.nextId }, fetchMoreOrdersData.map { $0.1.nextId }).merge()
+        let combinedNextIds = Observable.of(initialOrderResultsData.map { $0.1.nextId },
+                                            fetchMoreOrdersData.map { $0.1.nextId }).merge()
         
         _ = combinedNextIds
             .do(onNext: {
@@ -96,7 +98,7 @@ struct OrdersListViewModel {
                 $0.amountWithCurrencySymbol
             }
         
-        errors = Observable.of(initalOrderResults.errors(), fetchMoreOrdersResult.errors(), distributorResults.errors()).merge()
+        error = Observable.of(initalOrderResults.errors(), fetchMoreOrdersResult.errors(), distributorResults.errors()).merge()
     }
 }
 
@@ -104,7 +106,7 @@ private extension ObservableType where Element == [Order] {
     func mapToSectionOrders() -> Observable<[OrdersSection]> {
         return map { orders in
             let dictionary = Dictionary(grouping: orders, by:  { $0.monthAndYear })
-            let sortedKeys = dictionary.keys.sorted(by: {$0.month>$1.month})
+            let sortedKeys = dictionary.keys.sorted(by: {$0.month > $1.month})
             var sectionOrders: [OrdersSection] = []
             for key in sortedKeys {
                 sectionOrders.append(OrdersSection(monthAndYearData: key, orders: dictionary[key] ?? []))

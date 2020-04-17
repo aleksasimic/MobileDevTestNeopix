@@ -7,6 +7,7 @@ struct OrderDetailsViewModel {
     let distributorName: Observable<String>
     let distributorLogoUrl: Observable<String>
     
+    let venue: Observable<Venue>
     let venueName: Observable<String>
     let venueImageUrl: Observable<String>
     let orderStatus: Observable<OrderStatus>
@@ -19,6 +20,8 @@ struct OrderDetailsViewModel {
     let products: Observable<[Product]>
     let notes: Observable<[Note]>
     let hideEmptyNotesView: Observable<Bool>
+    
+    let error: Observable<Error>
     
     init(loadTrigger: Observable<Void>,
          orderId: Int, distributorName: String, distributorLogoUrl: String,
@@ -40,6 +43,11 @@ struct OrderDetailsViewModel {
         let order = orderDetailsData
             .map {
                 $0
+            }
+        
+        venue = order
+            .map {
+                $0.venue
             }
         
         venueName = order
@@ -112,6 +120,8 @@ struct OrderDetailsViewModel {
             .map {
                 $0.count > 0
             }
+        
+        error = orderDetailResults.errors()
     }
 }
 

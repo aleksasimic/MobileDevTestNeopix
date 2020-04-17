@@ -95,6 +95,7 @@ extension OrdersListDataSource: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: "customSectionHeader") as! OrderTableViewSectionHeader
         header.monthAndYearLabel.text = data[section].monthAndYearData.monthAndYearString
+        header.contentView.backgroundColor = UIColor.clear
         
         return header
     }
