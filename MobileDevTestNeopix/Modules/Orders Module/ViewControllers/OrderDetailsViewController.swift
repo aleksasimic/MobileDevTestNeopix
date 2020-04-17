@@ -14,7 +14,8 @@ class OrderDetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var venueImageView: UIImageView!
     @IBOutlet weak var venueNameLabel: UILabel!
     @IBOutlet weak var viewVenueInfoButton: UIButton!
-
+    @IBOutlet weak var moreButton: UIButton!
+    
     @IBOutlet weak var orderStatusLabel: OrderStatusLabel!
     @IBOutlet weak var orderNumberTitleLabel: UILabel!
     @IBOutlet weak var orderNumberDescriptionLabel: UILabel!
@@ -179,6 +180,13 @@ private extension OrderDetailsViewController {
                 self?.coordinator?.closeOrderDetails()
             })
             .disposed(by: bag)
+        
+        viewVenueInfoButton.rx.tap.asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.coordinator?.showVenueInfo()
+            })
+            .disposed(by: bag)
     }
     
     func setupNotesDataSource(withData data: Observable<[Note]>, distributorName: Observable<String>, distributorLogo: Observable<String>) {
@@ -277,6 +285,7 @@ private extension OrderDetailsViewController {
     func setupUI() {
         setupLabels()
         venueImageView.setRoundedCorners()
+        acceptButtonView.layer.applySketchShadow(color: UIColor.acceptOrderShadowColor(), alpha: 1.0, x: 0, y: 8, blur: 16.0, spread: -8.0)
     }
     
     func setupLabels() {
@@ -287,14 +296,6 @@ private extension OrderDetailsViewController {
         acceptedOnValueLabel.text = String.NA
     }
 }
-
-//extension OrderDetailsViewController: UIScrollViewDelegate {
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        print("USO")
-//        print(self.horizontalScrollView.contentOffset.x)
-//        print(self.horizontalScrollView.contentOffset.x/view.frame.width)
-//    }
-//}
 
 private extension String {
     static let OrderNumber = "Order number".uppercased()

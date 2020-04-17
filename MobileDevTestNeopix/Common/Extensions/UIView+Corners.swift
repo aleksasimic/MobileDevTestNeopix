@@ -32,8 +32,15 @@ import UIKit
         }
     }
     
-    func setRoundedCorners() {
-         self.layer.cornerRadius = self.frame.width / 2;
-         self.layer.masksToBounds = true;
-     }
+    func setRoundedCorners(withBorderWidth width: CGFloat? = nil, withBorderColor color: UIColor? = nil) {
+        self.layer.cornerRadius = self.frame.width / 2
+        if let borderWidth = width {
+            self.borderWidth = borderWidth
+        }
+        
+        if let borderColor = borderColor {
+            self.borderColor = borderColor
+        }
+        self.layer.masksToBounds = true
+    }
 }

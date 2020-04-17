@@ -1,5 +1,6 @@
 import Foundation
 import RxSwift
+import UIKit
 
 class OrdersListDataSource: NSObject {
     var selected: Observable<Int>!
@@ -7,12 +8,18 @@ class OrdersListDataSource: NSObject {
     private let tableView: UITableView
     private let bag = DisposeBag()
     private let fetchMoreOrdersSubject: PublishSubject<Void>
+    private let headerViewPositionUpdateSubject: PublishSubject<(CGFloat, Bool)>
+    
+    private var lastContentOffset: CGFloat
     
     init(withTableView tableView: UITableView,
          orders: Observable<[OrdersSection]>,
-         fetchMoreOrdersTrigger: PublishSubject<Void>) {
+         fetchMoreOrdersTrigger: PublishSubject<Void>,
+         headerViewPositionUpdateTrigger: PublishSubject<(CGFloat, Bool)>) {
         self.tableView = tableView
         self.fetchMoreOrdersSubject = fetchMoreOrdersTrigger
+        self.headerViewPositionUpdateSubject = headerViewPositionUpdateTrigger
+        self.lastContentOffset = 0
         super.init()
         setupTableView()
         setupUpdate(withData: orders)
@@ -53,14 +60,14 @@ class OrdersListDataSource: NSObject {
             })
             .map { [weak self] in
                 self?.getItem(atIndexPath: $0)
-            }
-            .filter {
-                $0 != nil
-            }
-            .map {
-                $0!.id
-            }
-            .share(replay: 1, scope: .whileConnected)
+        }
+        .filter {
+            $0 != nil
+        }
+        .map {
+            $0!.id
+        }
+        .share(replay: 1, scope: .whileConnected)
     }
 }
 
@@ -115,5 +122,15 @@ extension OrdersListDataSource: UIScrollViewDelegate {
         } else if scrollView.contentOffset.y >= sectionHeaderHeight {
             scrollView.contentInset = UIEdgeInsets(top: -sectionHeaderHeight, left: 0, bottom: 0, right: 0)
         }
+        
+        if self.lastContentOffset < scrollView.contentOffset.y {
+            headerViewPositionUpdateSubject.onNext((scrollView.contentOffset.y - self.lastContentOffset, true))
+        } else if self.lastContentOffset > scrollView.contentOffset.y {
+            headerViewPositionUpdateSubject.onNext((self.lastContentOffset-scrollView.contentOffset.y, false))
+        }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.lastContentOffset = scrollView.contentOffset.y
     }
 }

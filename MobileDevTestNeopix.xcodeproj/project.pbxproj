@@ -18,6 +18,8 @@
 		B44E532A244493A500B74005 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E5329244493A500B74005 /* Money.swift */; };
 		B44E532C2444B38F00B74005 /* UIImageView+Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E532B2444B38F00B74005 /* UIImageView+Cacheable.swift */; };
 		B44E532E2444D57200B74005 /* OrderStatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E532D2444D57200B74005 /* OrderStatusLabel.swift */; };
+		B44ED1EE2448F07500B5CBDD /* CALayer+SketchShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44ED1ED2448F07500B5CBDD /* CALayer+SketchShadow.swift */; };
+		B44ED1F02449318D00B5CBDD /* VenueInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44ED1EF2449318D00B5CBDD /* VenueInfoViewController.swift */; };
 		B44F1E55244865A800D1FA88 /* TabIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F1E54244865A800D1FA88 /* TabIndicatorView.swift */; };
 		B44F1E57244878C800D1FA88 /* OrderDetailsProductsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F1E56244878C800D1FA88 /* OrderDetailsProductsDatasource.swift */; };
 		B44F1E592448791200D1FA88 /* OrderDetailsNotesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F1E582448791200D1FA88 /* OrderDetailsNotesDataSource.swift */; };
@@ -143,6 +145,8 @@
 		B44E5329244493A500B74005 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		B44E532B2444B38F00B74005 /* UIImageView+Cacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cacheable.swift"; sourceTree = "<group>"; };
 		B44E532D2444D57200B74005 /* OrderStatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusLabel.swift; sourceTree = "<group>"; };
+		B44ED1ED2448F07500B5CBDD /* CALayer+SketchShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+SketchShadow.swift"; sourceTree = "<group>"; };
+		B44ED1EF2449318D00B5CBDD /* VenueInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueInfoViewController.swift; sourceTree = "<group>"; };
 		B44F1E54244865A800D1FA88 /* TabIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabIndicatorView.swift; sourceTree = "<group>"; };
 		B44F1E56244878C800D1FA88 /* OrderDetailsProductsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsProductsDatasource.swift; sourceTree = "<group>"; };
 		B44F1E582448791200D1FA88 /* OrderDetailsNotesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsNotesDataSource.swift; sourceTree = "<group>"; };
@@ -414,6 +418,7 @@
 			children = (
 				B46A90FD24432D5500933856 /* OrdersListViewController.swift */,
 				B45CE66824472A92002ACB4D /* OrderDetailsViewController.swift */,
+				B44ED1EF2449318D00B5CBDD /* VenueInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -554,6 +559,7 @@
 				B44E53262444925A00B74005 /* NumberFormatter+Utilites.swift */,
 				B44E532B2444B38F00B74005 /* UIImageView+Cacheable.swift */,
 				B44F1E5A2448A7E100D1FA88 /* UITableView+Utilites.swift */,
+				B44ED1ED2448F07500B5CBDD /* CALayer+SketchShadow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -895,11 +901,13 @@
 				B452E62D2441FEEA00B0DD6F /* Orderable.swift in Sources */,
 				B46A90F92443277B00933856 /* OrdersContainer.swift in Sources */,
 				B45188C724424B0D0050102E /* Note.swift in Sources */,
+				B44ED1F02449318D00B5CBDD /* VenueInfoViewController.swift in Sources */,
 				B4A5C18D2445DF100019E534 /* MonthAndYearData.swift in Sources */,
 				B452E6272441FE2700B0DD6F /* Coordinator.swift in Sources */,
 				B46A910024432EA300933856 /* UIViewController+Rx.swift in Sources */,
 				B44E531B24446BE000B74005 /* OrdersListDataSource.swift in Sources */,
 				B45CE66B24472AAA002ACB4D /* OrderDetailsViewModel.swift in Sources */,
+				B44ED1EE2448F07500B5CBDD /* CALayer+SketchShadow.swift in Sources */,
 				B452E689244209A400B0DD6F /* Response.swift in Sources */,
 				B44F1E592448791200D1FA88 /* OrderDetailsNotesDataSource.swift in Sources */,
 				B46A910224432F6600933856 /* OrdersListViewModel.swift in Sources */,

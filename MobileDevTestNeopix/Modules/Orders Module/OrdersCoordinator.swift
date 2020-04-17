@@ -47,4 +47,13 @@ extension OrdersCoordinator: Orderable {
             presentedViewController.dismiss(animated: true, completion: nil)
         }
     }
+    
+    
+    func showVenueInfo() {
+        let vc = VenueInfoViewController.instantiate()
+        vc.modalPresentationStyle = .custom
+        if let presentedViewController = navigationController.presentedViewController {
+            presentedViewController.present(vc, animated: true, completion: nil)
+        }
+    }
 }
